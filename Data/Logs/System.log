@@ -1,0 +1,16 @@
+14-08-21 19:29:28 4046       NOTICE    Flow                 Locking site. Lock file: /var/www/typo.flow/Data/Temporary/Production/Flow.lock
+14-08-21 19:29:29 4046       INFO      Flow                 Aspect classes have been modified, flushing the whole proxy classes cache.
+14-08-21 19:29:29 4046       INFO      Flow                 Domain model changes have been detected, triggering Doctrine 2 proxy rebuilding.
+14-08-21 19:29:29 4046       INFO      Flow                 File Monitor "Flow_ClassFiles" detected 1750 changed files and 21 changed directories.
+14-08-21 19:29:29 4046       INFO      Flow                 A configuration file matching the pattern "/Policy\.yaml/" has been changed, flushing related cache "Flow_Security_Policy"
+14-08-21 19:29:29 4046       INFO      Flow                 A configuration file matching the pattern "/Views\.yaml/" has been changed, flushing related cache "Flow_Mvc_ViewConfigurations"
+14-08-21 19:29:29 4046       INFO      Flow                 A configuration file matching the pattern "/Routes([^\/]*)\.yaml/" has been changed, flushing related cache "Flow_Mvc_Routing_FindMatchResults"
+14-08-21 19:29:29 4046       INFO      Flow                 A configuration file matching the pattern "/Routes([^\/]*)\.yaml/" has been changed, flushing related cache "Flow_Mvc_Routing_Resolve"
+14-08-21 19:29:29 4046       INFO      Flow                 The configuration has changed, triggering an AOP proxy class rebuild.
+14-08-21 19:29:29 4046       INFO      Flow                 File Monitor "Flow_ConfigurationFiles" detected 25 changed files and 6 changed directories.
+14-08-21 19:29:29 4046       INFO      Flow                 The localization files have changed, thus flushing the I18n XML model cache.
+14-08-21 19:29:29 4046       INFO      Flow                 File Monitor "Flow_TranslationFiles" detected 8 changed files and 2 changed directories.
+14-08-21 19:29:32 4046       INFO      Flow                 Reflected 634 emerged classes.
+14-08-21 19:29:32 4046       INFO      Flow                 Aspects have been modified, therefore rebuilding all target classes.
+14-08-21 19:29:33 4046       INFO      Flow                 Built and froze reflection runtime caches (666 classes).
+14-08-21 19:29:33 4046       NOTICE    Flow                 Unlocked site.

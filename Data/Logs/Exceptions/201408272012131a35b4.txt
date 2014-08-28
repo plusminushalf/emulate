@@ -1,0 +1,16 @@
+Uncaught exception #1230035614 in line 73 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Aop/Pointcut/PointcutSettingFilter.php: The given configuration path in the pointcut designator "setting" did not exist. Got: "TYPO3.Flow.security.enable"
+
+14 TYPO3\Flow\Aop\Pointcut\PointcutSettingFilter::parseConfigurationOptionPath("TYPO3.Flow.security.enable")
+13 TYPO3\Flow\Aop\Pointcut\PointcutSettingFilter::injectConfigurationManager(TYPO3\Flow\Configuration\ConfigurationManager)
+12 TYPO3\Flow\Aop\Pointcut\PointcutExpressionParser::parseDesignatorSetting("&&", "TYPO3.Flow.security.enable", TYPO3\Flow\Aop\Pointcut\PointcutFilterComposite)
+11 TYPO3\Flow\Aop\Pointcut\PointcutExpressionParser::parse("setting(TYPO3.Flow.security.enable) && within(TYPO3\Flow\Persistence\QueryInterface) && method(.*->(execute|count)())", "TYPO3\Flow\Security\Aspect\PersistenceQueryRewritingAspect::rewriteQomQuery (TYPO3\Flow\Annotations\Around advice)")
+10 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::buildAspectContainer("TYPO3\Flow\Security\Aspect\PersistenceQueryRewritingAspect")
+9 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::buildAspectContainers(array|11|)
+8 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::build()
+7 TYPO3\Flow\Command\CoreCommandController::compileCommand(FALSE)
+6 call_user_func_array(array|2|, array|1|)
+5 TYPO3\Flow\Cli\CommandController::callCommandMethod()
+4 TYPO3\Flow\Cli\CommandController::processRequest(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+2 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

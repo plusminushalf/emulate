@@ -1,0 +1,22 @@
+Uncaught exception #1318414040 in line 437 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Configuration/ConfigurationManager.php: The SubRoute Package "My.Demo" referenced in Route "Homepage" is not available.
+
+6 TYPO3\Flow\Configuration\ConfigurationManager::mergeRoutesWithSubRoutes(array|3|)
+5 TYPO3\Flow\Configuration\ConfigurationManager::loadConfiguration("Routes", array|32|)
+4 TYPO3\Flow\Configuration\ConfigurationManager::getConfiguration("Routes")
+3 TYPO3\Flow\Http\RequestHandler::resolveDependencies()
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

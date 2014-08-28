@@ -1,0 +1,59 @@
+Uncaught exception in line 649 of /var/www/typo.flow/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Connection.php: An exception occurred while executing 'SELECT count(DISTINCT t0_.persistence_object_identifier) AS sclr0 FROM typo3_blog_domain_model_post t0_':
+
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'emulate.typo3_blog_domain_model_post' doesn't exist
+
+40 Doctrine\DBAL\DBALException::driverExceptionDuringQuery(PDOException, "SELECT count(DISTINCT t0_.persistence_object_identifier) AS sclr0 FROM typo3_blog_domain_model_post t0_", array|0|)
+39 Doctrine\DBAL\Connection::executeQuery("SELECT count(DISTINCT t0_.persistence_object_identifier) AS sclr0 FROM typo3_blog_domain_model_post t0_", array|0|, array|0|, NULL)
+38 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+37 Doctrine\ORM\Query::_doExecute()
+36 Doctrine\ORM\AbstractQuery::execute(NULL, 4)
+35 Doctrine\ORM\AbstractQuery::getSingleResult(4)
+34 Doctrine\ORM\AbstractQuery::getSingleScalarResult()
+33 TYPO3\Flow\Persistence\Doctrine\Query_Original::count()
+32 TYPO3\Flow\Persistence\Doctrine\Query::count()
+31 call_user_func_array(array|2|, array|0|)
+30 TYPO3\Flow\Persistence\Doctrine\Query::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+29 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+28 TYPO3\Flow\Security\Aspect\PersistenceQueryRewritingAspect_Original::rewriteQomQuery(TYPO3\Flow\Aop\JoinPoint)
+27 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+26 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+25 TYPO3\Flow\Persistence\Doctrine\Query::count()
+24 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::count()
+23 count(TYPO3\Flow\Persistence\Doctrine\QueryResult)
+22 TYPO3\Fluid\Core\Parser\SyntaxTree\BooleanNode_Original::convertToBoolean(TYPO3\Flow\Persistence\Doctrine\QueryResult)
+21 FluidCache_TYPO3_Blog_Post_action_index_c4a2988700c75e219a978a527d45545f866b1f0e::section_4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469(TYPO3\Fluid\Core\Rendering\RenderingContext)
+20 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+19 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+18 call_user_func_array(array|2|, array|4|)
+17 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+15 FluidCache_TYPO3_Blog_Post_layout_Default_6bcb58bbaaaae4306adc1eab5b58d337f211236a::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+14 TYPO3\Fluid\View\AbstractTemplateView::render()
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /typo3.blog/post HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

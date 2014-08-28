@@ -1,0 +1,31 @@
+Uncaught exception #1234782997 in line 335 of /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Flow_Mvc_Routing_Route.php: The URI pattern "emulate(/{@action})/" of route "Homepage :: Homepage" ends with a slash, which is not allowed. You can put the trailing slash in brackets to make it optional.
+
+14 TYPO3\Flow\Mvc\Routing\Route_Original::parse()
+13 TYPO3\Flow\Mvc\Routing\Route_Original::matches(TYPO3\Flow\Http\Request)
+12 TYPO3\Flow\Mvc\Routing\Router_Original::findMatchResults(TYPO3\Flow\Http\Request)
+11 TYPO3\Flow\Mvc\Routing\Router_Original::route(TYPO3\Flow\Http\Request)
+10 TYPO3\Flow\Mvc\Routing\Router::route(TYPO3\Flow\Http\Request)
+9 call_user_func_array(array|2|, array|1|)
+8 TYPO3\Flow\Mvc\Routing\Router::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Fluid\Core\Widget\AjaxWidgetRoutingAspect_Original::routeAjaxWidgetRequestAdvice(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Routing\Router::route(TYPO3\Flow\Http\Request)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /emulate/ HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]
