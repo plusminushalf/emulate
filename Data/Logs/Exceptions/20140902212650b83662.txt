@@ -1,0 +1,26 @@
+Uncaught exception #1 in line 52 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Security/Aspect/RequestDispatchingAspect.php: Catchable Fatal Error: Argument 1 passed to TYPO3\Flow\Security\Aspect\RequestDispatchingAspect::__construct() must be an instance of TYPO3\Flow\Security\Context, none given, called in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Object/ObjectManager.php on line 476 and defined in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Security/Aspect/RequestDispatchingAspect.php line 52
+
+9 TYPO3\Flow\Error\ErrorHandler::handleError(4096, "Argument 1 passed to TYPO3\Flow\Security\Aspect\RequestDispatchingAspect::__construct() must be an instance of TYPO3\Flow\Security\Context, none given, called in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Object/ObjectManager.php on line 476 and defined", "/var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Security/Aspect/RequestDispatchingAspect.php", 52, array|0|)
+8 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect::__construct()
+7 TYPO3\Flow\Object\ObjectManager::instantiateClass("TYPO3\Flow\Security\Aspect\RequestDispatchingAspect", array|0|)
+6 TYPO3\Flow\Object\ObjectManager::get("TYPO3\Flow\Security\Aspect\RequestDispatchingAspect")
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /project.emulate/standard/index HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Referer: http://typo.flow/emulator
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+[response was empty]

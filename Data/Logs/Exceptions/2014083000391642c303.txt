@@ -1,0 +1,39 @@
+Uncaught exception #1355480641 in line 250 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Core/Booting/Scripts.php: 
+Parse error: syntax error, unexpected '}', expecting ',' or ';' in /var/www/typo.flow/Packages/Application/project.emulate/Classes/project/emulate/Aspect/AuthenticateAspect.php on line 65
+
+17 TYPO3\Flow\Core\Booting\Scripts::executeCommand("typo3.flow:core:compile", array|16|)
+16 TYPO3\Flow\Core\Booting\Scripts::initializeProxyClasses(TYPO3\Flow\Core\Bootstrap)
+15 TYPO3\Flow\Core\Booting\Scripts::recompileClasses(TYPO3\Flow\Core\Bootstrap)
+14 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+13 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+12 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+11 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+10 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+3 TYPO3\Flow\Http\RequestHandler::boot()
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /login HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Content-Length: 251
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://typo.flow
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://typo.flow/login
+Accept-Encoding: gzip,deflate
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+__authentication%5BTYPO3%5D%5BFlow%5D%5BSecurity%5D%5BAuthentication%5D%5BToken%5D%5BUsernamePassword%5D%5Busername%5D=garvit&__authentication%5BTYPO3%5D%5BFlow%5D%5BSecurity%5D%5BAuthentication%5D%5BToken%5D%5BUsernamePassword%5D%5Bpassword%5D=garvit
+
+HTTP RESPONSE:
+[response was empty]

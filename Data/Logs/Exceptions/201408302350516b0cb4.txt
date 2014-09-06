@@ -1,0 +1,131 @@
+Uncaught exception #1237823695 in line 507 of /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Fluid_Core_Parser_TemplateParser.php: Argument "prperty" was not registered.
+
+19 TYPO3\Fluid\Core\Parser\TemplateParser_Original::abortIfUnregisteredArgumentsExist(array|17|, array|2|)
+18 TYPO3\Fluid\Core\Parser\TemplateParser_Original::initializeViewHelperAndAddItToStack(TYPO3\Fluid\Core\Parser\ParsingState, "f", "form.radio", array|2|)
+17 TYPO3\Fluid\Core\Parser\TemplateParser_Original::openingViewHelperTagHandler(TYPO3\Fluid\Core\Parser\ParsingState, "f", "form.radio", " prperty="gender" value="Male"", FALSE)
+16 TYPO3\Fluid\Core\Parser\TemplateParser_Original::buildObjectTree(array|46|, 2)
+15 TYPO3\Fluid\Core\Parser\TemplateParser_Original::parse("<f:layout name="Default" />
+
+<f:section name="Title">Index view of Standard controller</f:section>
+<f:section name="Content">
+    <f:security.ifHasRole role="project.emulate:User">
+        <f:then>
+            <a href='/logout'>logout</a>
+        </f:then>
+        <f:else>
+            <br>
+        <div class="row">
+            <a href="#"><div type="button" class="col-md-offset-1 btn btn-primary" disable>EMULATE</div></a>
+            <f:link.action action="help" controller="Standard"><button type="button" class="col-md-offset-8 btn btn-primary">Help</button></f:link.action>
+            <a target="_blank" href="https://www.facebook.com/garvitdelhi"><button type="button" class="col-md-offset-0 btn btn-primary">Developer</button></a>
+        </div>
+        <hr>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <div class="login-panel panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Please Sign In</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form method='post' action="index" name="login">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Username" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][username]" type='text' autofocus="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password" name="__authentication[TYPO3][Flow][Security][Authentication][Token][UsernamePassword][password]" type="password" value="" />
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <p class="text-primary text-right"><a  href="http://typo.flow/">Forgot password</a></p>
+                                    <input type='submit' class="btn btn-lg btn-primary btn-block" value='Login' />
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-offset-2">
+                    <div class="login-panel panel panel-default">
+                           <div class="panel-heading">
+                                <p class="panel-title">Social Signup</p>
+                        </div>
+                        <div class="panel-body">
+                            <div>
+                                <p><a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="http://typo.flow/" class="text-muted">Facebook</a>
+                                <a href="http://typo.flow/" class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+                                <a href="http://typo.flow/" class="text-muted">Google+</a>
+                                <a href="http://typo.flow/" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+                                <a href="http://typo.flow/" class="text-muted">Github</a></p>
+                            </div>
+                        </div>
+                           <div class="panel-heading">
+                            <h3 class="panel-title">Create a New Account</h3>
+                        </div>
+                        <div class="panel-body">
+                            <f:form method='post' controller="UserAccount" objectName="userAccount" action="accountRegistration">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <f:form.textfield type="text" name="name" property="name" placeholder="Name" class="form-control" required="TRUE"/>
+                                        <!-- <input class="form-control" placeholder="Name" name="password" type="text" value="" /> -->
+                                    </div>
+                                    <div class="form-group">
+                                    <f:form.textfield type="email" name="email" property="email" placeholder="Email" class="form-control" required="TRUE"/>
+                                        <!-- <input class="form-control" placeholder="Email" name="password" type="email" value="" /> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <f:form.textfield type="text" name="username" property="username" placeholder="Username" class="form-control" required="TRUE"/>
+                                        <!-- <input class="form-control" placeholder="Username" name="username" type='text' autofocus="" /> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <f:form.textfield type="password" class="form-control" property="password" placeholder="Password" name="password" additionalAttributes="{required: TRUE}"/>
+                                        <!-- <input class="form-control" placeholder="Password" name="password" type="password" value="" /> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <f:form.radio prperty="gender" value="Male">Male</f:form.radio>
+                                        <f:form.radio prperty="gender" value="Female">Female</f:form.radio>
+                                    </div>
+                                    <!-- Change this to a button or input when using this as a form -->
+                                    <input type='submit' class="btn btn-lg btn-primary btn-block" value='Signup' />
+                                </fieldset>
+                            </f:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </f:else>
+    </f:security.ifHasRole>
+</f:section>
+")
+14 TYPO3\Fluid\View\AbstractTemplateView::render()
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /project.emulate/standard/index HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Referer: http://typo.flow/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

@@ -3,7 +3,7 @@
   uriPattern: ''
   defaults:
     '@package': 'project.emulate'
-    '@controller': 'Standard'
+    '@controller': 'standard'
     '@action': 'index'
 
 -
@@ -11,13 +11,21 @@
   uriPattern: '({@action})'
   defaults:
     '@package': 'project.emulate'
-    '@controller': 'Standard'
+    '@controller': 'standard'
     '@action': 'index'
 
 -
   name: 'Homepage'
-  uriPattern: '{controller}(/{action})'
+  uriPattern: '{@controller}(/{@action})'
   defaults:
     '@package': 'project.emulate'
-    '@controller': 'Standard'
+    '@controller': 'standard'
     '@action': 'index'
+
+-
+  name: 'Homepage'
+  uriPattern: '{emulator}/{controller}/{action}}'
+  defaults:
+    '@package': 'project.emulate'
+    '@controller': 'standard'
+    '@action': 'emulatorController'

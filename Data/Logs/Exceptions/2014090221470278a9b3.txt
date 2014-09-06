@@ -1,0 +1,238 @@
+Uncaught exception #1 in line 43 of /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Classes_Domain_Model_Segments.php: Warning: Missing argument 1 for project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments_Original::getCode(), called in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Reflection/ObjectAccess.php on line 149 and defined in /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Classes_Domain_Model_Segments.php line 43
+
+32 TYPO3\Flow\Error\ErrorHandler::handleError(2, "Missing argument 1 for project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments_Original::getCode(), called in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Reflection/ObjectAccess.php on line 149 and defined", "/var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Classes_Domain_Model_Segments.php", 43, array|0|)
+31 project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments_Original::getCode()
+30 TYPO3\Flow\Reflection\ObjectAccess::getPropertyInternal(project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments, "code", FALSE, TRUE)
+29 TYPO3\Flow\Reflection\ObjectAccess::getProperty(project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments, "code")
+28 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::getPropertyValue(project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments, "code")
+27 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::isValid(project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments)
+26 TYPO3\Flow\Validation\Validator\GenericObjectValidator_Original::validate(project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments)
+25 TYPO3\Flow\Validation\Validator\ConjunctionValidator_Original::validate(project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments)
+24 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::validateObject(project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments, SplObjectStorage)
+23 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::onFlush(Doctrine\ORM\Event\OnFlushEventArgs)
+22 Doctrine\Common\EventManager::dispatchEvent("onFlush", Doctrine\ORM\Event\OnFlushEventArgs)
+21 Doctrine\ORM\UnitOfWork::commit(NULL)
+20 Doctrine\ORM\EntityManager::flush()
+19 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll(TRUE)
+18 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, project\emulate\Controller\StandardController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+17 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, project\emulate\Controller\StandardController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 call_user_func_array(array|2|, array|4|)
+15 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+14 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+13 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, project\emulate\Controller\StandardController)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /emulator HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Referer: http://typo.flow/index
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+
+
+
+HTTP RESPONSE:
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Emulate</title>
+
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+        <meta name="description" content="Mint by Grozav is a flat design approach towards Admin Dashboards. Intuitive, cutting-edge, clean and easy to use and customize, as every Application UI should be. " />
+
+        <!-- Core CSS - Include with every page -->
+        <link href="http://typo.flow/_Resources/Static/Packages/project.emulate/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="http://typo.flow/_Resources/Static/Packages/project.emulate/css/bootstrap.css" rel="stylesheet" />
+        <link href="http://typo.flow/_Resources/Static/Packages/project.emulate/css/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="http://typo.flow/_Resources/Static/Packages/project.emulate/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+        <link href="http://typo.flow/_Resources/Static/Packages/project.emulate/css/plugins/timeline/timeline.css" rel="stylesheet" />
+        <link href="http://typo.flow/_Resources/Static/Packages/project.emulate/css/mint-admin.css" rel="stylesheet" />
+        <link href="http://typo.flow/_Resources/Static/Packages/project.emulate/css/plugins/social-buttons/social-buttons.css" rel="stylesheet" />
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/jquery.min.js" type="text/javascript"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/myscript.js" type="text/javascript"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/jquery-1.10.2.js"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/bootstrap.min.js"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/plugins/morris/raphael-2.1.0.min.js"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/plugins/morris/morris.js"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/mint-admin.js"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/demo/dashboard-demo.js"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/animate.js" type="text/javascript"></script>
+        <script src="http://typo.flow/_Resources/Static/Packages/project.emulate/js/ajax.js" type="text/javascript"></script>
+	<script>
+		var InfiniteAjaxRequest = function (uri) {
+    			$.ajax({
+        			url: uri,
+        			success: function(data) {
+            				// do something with "data"
+            				if (data.length > 0) {
+            					if(data==='false') {
+            						window.open("{siteurl}login/extend","","width=500, height=400");
+                                    window.setTimeout(function() {
+                                        InfiniteAjaxRequest (uri);
+                                    },5500);
+                				}
+                                else if(data==='logout'){
+                                    window.location.assign("{siteurl}")
+                                }
+                                else {
+                                    InfiniteAjaxRequest (uri);
+                                }
+            				}
+        			},
+        			error: function(xhr, ajaxOptions, thrownError) {
+            				InfiniteAjaxRequest (uri);
+        			}
+    			});
+		};
+	</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+    <body>
+
+
+	        <div id="wrapper">
+
+		    <!-- navbar-static-top -->
+        	    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                    <!-- navbar-header -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="http://typo.flow/">Emulate</a>
+                    </div>
+                    <!-- /.navbar-header -->
+                    <!-- navbar-top-links -->
+                    <ul class="nav navbar-top-links navbar-right">
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                 <i class="fa fa-bell fa-2x fa-fw"></i><span class="notification-icon label label-danger">1</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-alerts">
+                                
+	<li>
+    	<a href="#">
+        	<div>
+        		<i class="fa fa-envelope fa-fw"></i> Message Sent
+        	    <span class="pull-right text-muted small">4 minutes ago</span>
+			</div>
+		</a>
+	</li>
+
+                                <li class="divider"></li>
+                                <li>
+                                    <a class="text-center" href="#">
+                                        <strong>See All Alerts</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-alerts -->
+                        </li>
+                        <!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user fa-2x fa-fw"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href=""><i class="fa fa-user fa-fw"></i> User Profile</a>
+                                </li>
+                                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="http://typo.flow/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                                </li>
+                            </ul>
+                            <!-- /.dropdown-user -->
+                        </li>
+                        <!-- /.dropdown -->
+                    </ul>
+                    <!-- /.navbar-top-links -->
+        	    </nav>
+        	    <!-- /.navbar-static-top -->
+
+		    <!-- /.navbar-static-side -->
+        	    <nav class="navbar-default navbar-static-side" role="navigation">
+        	        <div class="sidebar-collapse">
+        	            <ul class="nav" id="side-menu">
+        	                <li>
+        	                    <div class="user-info-wrapper">
+        	                        <div class="user-info-profile-image">
+                                        
+                                                <img src="http://typo.flow/_Resources/Static/Packages/project.emulate/img/Generic_profile_M.jpg" alt="" width="65" height="65" />
+                                            
+        	                        </div>
+        	                        <div class="user-info">
+        	                            <div class="user-welcome">Welcome</div>
+        	                            <div class="username"><strong>Garvit Khatri</strong></div>
+        	                        </div>
+        	                    </div>
+        	                </li>
+        	                <li class="sidebar-search">
+        	                    <div class="input-group custom-search-form">
+        	                        <input type="text" class="form-control" placeholder="Search Faq ..." />
+        	                        <span class="input-group-btn">
+        	                            <button class="btn btn-default" type="button">
+        	                                <i class="fa fa-search"></i>
+        	                            </button>
+        	                        </span>
+        	                    </div>
+        	                    <!-- /input-group -->
+        	                </li>
+        	                <li>
+                                
+                                        <a href="http://typo.flow/home"><i class="fa fa-home fa-fw fa-3x"></i>Home</a>
+                                    
+                                
+                                        <a class="active" href="http://typo.flow/emulator"><i class="fa fa-github-alt fa-fw fa-3x"></i>Emulator</a>
+                                    
+                                
+                                        <a href="http://typo.flow/help"><i class="fa fa-plus-square fa-fw fa-3x"></i>Help</a>
+                                    
+        	                </li>
+        	                
+        	            </ul>
+        	            <!-- /#side-menu -->
+        	        </div>
+        	        <!-- /.sidebar-collapse -->
+        	    </nav>
+        	    <!-- /.navbar-static-side -->
+                <div id="page-wrapper">
+        	        <!-- PRELOADER -->
+			        <div id="preloader"><img src="http://typo.flow/_Resources/Static/Packages/project.emulate/img/preloader.gif" alt="" /></div>
+			        <!-- //PRELOADER -->
+			        <div class="preloader_hide">
+                        
+	
+			8086
+		
+
+	        	    </div>
+        	    </div>
+	       </div>
+    </body>
+
+</html>
+

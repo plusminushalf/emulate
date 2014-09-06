@@ -1,0 +1,58 @@
+Uncaught exception #1 in line 54 of /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Configuration_Config.php: Notice: Undefined property: project\emulate\Emulators\emulate8086\Configuration\Config::$key in /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Configuration_Config.php line 54
+
+40 TYPO3\Flow\Error\ErrorHandler::handleError(8, "Undefined property: project\emulate\Emulators\emulate8086\Configuration\Config::$key", "/var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Configuration_Config.php", 54, array|0|)
+39 project\emulate\Emulators\emulate8086\Configuration\Config_Original::getKey()
+38 TYPO3\Flow\Reflection\ObjectAccess::getPropertyInternal(project\emulate\Emulators\emulate8086\Configuration\Config, "key", FALSE, TRUE)
+37 TYPO3\Flow\Reflection\ObjectAccess::getProperty(project\emulate\Emulators\emulate8086\Configuration\Config, "key")
+36 TYPO3\Fluid\Core\Parser\SyntaxTree\ObjectAccessorNode_Original::getPropertyPath(TYPO3\Fluid\Core\ViewHelper\TemplateVariableContainer, "emulator.key", TYPO3\Fluid\Core\Rendering\RenderingContext)
+35 FluidCache_project_emulate_Standard_action_emulator_8a8c1b85ae02ab5c2154032df2d16c3fa85c9239::{closure}()
+34 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::renderChildren()
+33 TYPO3\Fluid\ViewHelpers\FormViewHelper_Original::render("loadEmulator", array|0|, NULL, NULL, NULL, NULL, "", "", array|0|, FALSE, FALSE, array|0|, NULL, NULL, NULL, FALSE)
+32 call_user_func_array(array|2|, array|16|)
+31 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+30 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+29 FluidCache_project_emulate_Standard_action_emulator_8a8c1b85ae02ab5c2154032df2d16c3fa85c9239::{closure}()
+28 TYPO3\Fluid\ViewHelpers\ForViewHelper_Original::renderStatic(array|5|, Closure, TYPO3\Fluid\Core\Rendering\RenderingContext)
+27 FluidCache_project_emulate_Standard_action_emulator_8a8c1b85ae02ab5c2154032df2d16c3fa85c9239::{closure}()
+26 TYPO3\Fluid\Core\ViewHelper\AbstractConditionViewHelper::renderElseChild()
+25 TYPO3\Fluid\ViewHelpers\IfViewHelper_Original::render(FALSE)
+24 call_user_func_array(array|2|, array|1|)
+23 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+22 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+21 FluidCache_project_emulate_Standard_action_emulator_8a8c1b85ae02ab5c2154032df2d16c3fa85c9239::section_4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469(TYPO3\Fluid\Core\Rendering\RenderingContext)
+20 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+19 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+18 call_user_func_array(array|2|, array|4|)
+17 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+15 FluidCache_project_emulate_Standard_layout_Page_c62c1fa852e9de78c756631e3197d6ba41377849::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+14 TYPO3\Fluid\View\AbstractTemplateView::render()
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /emulator HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Referer: http://typo.flow/index
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

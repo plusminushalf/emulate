@@ -1,0 +1,70 @@
+Uncaught exception in line 649 of /var/www/typo.flow/Packages/Libraries/doctrine/dbal/lib/Doctrine/DBAL/Connection.php: An exception occurred while executing 'SELECT count(DISTINCT p0_.persistence_object_identifier) AS sclr0 FROM project_emulate_domain_model_foo p0_':
+
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'emulate.project_emulate_domain_model_foo' doesn't exist
+
+51 Doctrine\DBAL\DBALException::driverExceptionDuringQuery(PDOException, "SELECT count(DISTINCT p0_.persistence_object_identifier) AS sclr0 FROM project_emulate_domain_model_foo p0_", array|0|)
+50 Doctrine\DBAL\Connection::executeQuery("SELECT count(DISTINCT p0_.persistence_object_identifier) AS sclr0 FROM project_emulate_domain_model_foo p0_", array|0|, array|0|, NULL)
+49 Doctrine\ORM\Query\Exec\SingleSelectExecutor::execute(Doctrine\DBAL\Connection, array|0|, array|0|)
+48 Doctrine\ORM\Query::_doExecute()
+47 Doctrine\ORM\AbstractQuery::execute(NULL, 4)
+46 Doctrine\ORM\AbstractQuery::getSingleResult(4)
+45 Doctrine\ORM\AbstractQuery::getSingleScalarResult()
+44 TYPO3\Flow\Persistence\Doctrine\Query_Original::count()
+43 TYPO3\Flow\Persistence\Doctrine\Query::count()
+42 call_user_func_array(array|2|, array|0|)
+41 TYPO3\Flow\Persistence\Doctrine\Query::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+40 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+39 TYPO3\Flow\Security\Aspect\PersistenceQueryRewritingAspect_Original::rewriteQomQuery(TYPO3\Flow\Aop\JoinPoint)
+38 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+37 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+36 TYPO3\Flow\Persistence\Doctrine\Query::count()
+35 TYPO3\Flow\Persistence\Doctrine\QueryResult_Original::count()
+34 count(TYPO3\Flow\Persistence\Doctrine\QueryResult)
+33 TYPO3\Fluid\Core\Parser\SyntaxTree\BooleanNode_Original::convertToBoolean(TYPO3\Flow\Persistence\Doctrine\QueryResult)
+32 TYPO3\Fluid\Core\Parser\SyntaxTree\BooleanNode_Original::evaluate(TYPO3\Fluid\Core\Rendering\RenderingContext)
+31 TYPO3\Fluid\Core\Parser\SyntaxTree\ViewHelperNode_Original::evaluate(TYPO3\Fluid\Core\Rendering\RenderingContext)
+30 TYPO3\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNodes(TYPO3\Fluid\Core\Rendering\RenderingContext)
+29 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::renderChildren()
+28 TYPO3\Fluid\ViewHelpers\SectionViewHelper_Original::render()
+27 call_user_func_array(array|2|, array|0|)
+26 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+25 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+24 TYPO3\Fluid\Core\Parser\SyntaxTree\ViewHelperNode_Original::evaluate(TYPO3\Fluid\Core\Rendering\RenderingContext)
+23 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+22 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+21 call_user_func_array(array|2|, array|4|)
+20 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+19 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+18 TYPO3\Fluid\Core\Parser\SyntaxTree\ViewHelperNode_Original::evaluate(TYPO3\Fluid\Core\Rendering\RenderingContext)
+17 TYPO3\Fluid\Core\Parser\SyntaxTree\AbstractNode::evaluateChildNodes(TYPO3\Fluid\Core\Rendering\RenderingContext)
+16 TYPO3\Fluid\Core\Parser\SyntaxTree\RootNode_Original::evaluate(TYPO3\Fluid\Core\Rendering\RenderingContext)
+15 TYPO3\Fluid\Core\Parser\ParsingState_Original::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+14 TYPO3\Fluid\View\AbstractTemplateView::render()
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /foo/index HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]
