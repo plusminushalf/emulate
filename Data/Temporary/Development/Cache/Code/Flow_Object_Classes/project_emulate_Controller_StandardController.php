@@ -7,8 +7,9 @@ namespace project\emulate\Controller;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Mvc\Controller\ActionController;
 
-class StandardController_Original extends \TYPO3\Flow\Mvc\Controller\ActionController {
+class StandardController_Original extends ActionController {
 
 	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
@@ -17,90 +18,133 @@ class StandardController_Original extends \TYPO3\Flow\Mvc\Controller\ActionContr
 	protected $authenticationManager;
 
 	/**
-	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 * @var project\emulate\Domain\Model\User
+	 */
+	protected $user;
+
+	/**
+	 * Bootstrap for Emulator.
+	 * @var project\emulate\Domain\Model\Emulate
 	 * @Flow\Inject
 	 */
-	protected $securityContext;
+	protected $emulate;
 
 	/**
-     * @var \TYPO3\Flow\Security\AccountRepository
-     * @Flow\Inject
-     */
-    protected $accountRepository;
-
-    /**
-     * @var \TYPO3\Flow\Security\AccountFactory
-     * @Flow\Inject
-     */
-    protected $accountFactory;
-
-    /**
-     * [$requiredToken description]
-     * @var \TYPO3\Flow\Security\Authentication\Token\UsernamePassword
-     * @Flow\Inject
-     */
-    protected $requiredToken;
-
-	protected function initializeIndexAction() {
-	}
+	 * account Repository
+	 * @var project\emulate\Domain\Repository\UserAccountRepository
+	 * @Flow\Inject
+	 */
+	protected $userAccountRepository;
 
 	/**
-	 * boot code
-	 * @param string $controller controller of request
-	 * @param  string $action action to call of base controller
 	 * @return void
 	 */
-	public function indexAction($controller = "standard", $action = "index") {
-		$token = $this->securityContext->getAuthenticationTokensOfType('\TYPO3\Flow\Security\Authentication\Token\UsernamePassword')[0];
-		$account = $this->securityContext->getAccount();
-		if($token->isAuthenticated()) {
-			return "<a href='/logout'>logout</a>";
-		}
-		// if($token->isAuthenticated()) {
-		// 	return "<a href='/logout'>logout</a>";
-		// }
-		if($action != "index" || $controller != "standard") {
-			$this->forward($action, $controller);
+	public function indexAction() {
+		$this->view->assign('error', $this->user->getProperty());
+		if($this->user->getAuthenticated()) {
+			$this->forward('home');
 		}
 	}
 
+	/**
+	 * @return void
+	 */
 	public function logoutAction() {
+		$this->user->reset();
+		if($this->user->getAuthenticated()) {
+			$this->user->setAuthenticated(FALSE);
+		}
 		$this->authenticationManager->logout();
-		$this->redirect('index');
+		$this->forward('index');
 	}
 
 	/**
-	 * submiting form
+	 * user logged in time to get working showing timeline view :)
 	 * @return void
 	 */
-	public function loginAction() {
-        $this->authenticationManager->authenticate();
-        // return "logedin";
-        $this->redirect('index');
-		// return "string";
+	public function homeAction() {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$this->view->assign('active', 'home');
+		$this->view->assign('user', $this->user);
+
+		// Start your code here.
 	}
 
 	/**
-     * save the registration
-     * @param string $username
-     * @param string $password
-     */
-	public function signupAction($username, $password) {
-		$defaultRole = 'user';
-  
-        if($username == '' || strlen($username) < 3) {
-            $this->redirect('index');
-        } else {
-  
-            // create a account with password an add it to the accountRepository
-            $account = $this->accountFactory->createAccountWithPassword($username, $password);
-            $this->accountRepository->add($account);
-            // add a message and redirect to the login form
-            $this->redirect('index');
-        }
-  
-        // redirect to the login form
-        $this->redirect('index');
+	 * It's Emulator time :D, let's boot it up.
+	 * @return void
+	 */
+	public function emulatorAction() {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$this->view->assign('active', 'emulator');
+		$this->view->assign('user', $this->user);
+
+		// Start your code here.
+		$this->view->assign('readyState', FALSE);
+		$this->emulate->boot();
+		if($this->emulate->ready()) {
+			$this->view->assign('readyState', TRUE);
+			$emulator = $this->emulate->getEmulatorLoaded();
+			$this->view->assign('partial', $emulator->getKey());
+			$this->view->assign('emulator', $emulator);
+		} else {
+			$this->view->assign('emulators', $this->emulate->getEmulators());
+		}
+	}
+
+	/**
+	 * loads the passedEmulator
+	 * @param  string $Emulator
+	 * @return void
+	 */
+	public function loadEmulatorAction($Emulator) {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$account = $this->user->getUserAccount();
+		$account->setEmulatorPreference($Emulator);
+		$this->userAccountRepository->update($account);
+		$this->forward('emulator');
+	}
+
+	/**
+	 * help out section
+	 * @return void
+	 */
+	public function helpAction() {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$this->view->assign('active', 'help');
+		$this->view->assign('user', $this->user);
+
+		// Start your code here.
+	}
+
+	/**
+	 * emulator controller loading
+	 * @param  string $emulator
+	 * @param  string $controller
+	 * @param  string $action
+	 * @param  string $data
+	 * @return string
+	 */
+	public function emulatorControllerAction($emulator, $controller, $action, $data) {
+		if(!$this->user->getAuthenticated()) {
+			return "logout";
+		}
+		$this->emulate->boot();
+		if($this->emulate->ready()) {
+			$data = json_decode($data, true);
+			return $this->emulate->callEmulatorController(ucfirst($emulator), $controller, $action, $data);
+		} else {
+			$this->forward('index');
+		}
 	}
 
 }namespace project\emulate\Controller;
@@ -141,7 +185,7 @@ class StandardController extends StandardController_Original implements \TYPO3\F
 		$this->Flow_Aop_Proxy_targetMethodsAndGroupedAdvices = array(
 			'indexAction' => array(
 				'TYPO3\Flow\Aop\Advice\BeforeAdvice' => array(
-					new \TYPO3\Flow\Aop\Advice\BeforeAdvice('project\emulate\Aspect\fooAspect', 'firsttry', $objectManager, NULL),
+					new \TYPO3\Flow\Aop\Advice\BeforeAdvice('project\emulate\Aspect\UserAspect', 'registerUser', $objectManager, NULL),
 				),
 			),
 		);
@@ -224,16 +268,14 @@ class StandardController extends StandardController_Original implements \TYPO3\F
 
 	/**
 	 * Autogenerated Proxy Method
-	 * @param string $controller controller of request
-	 * @param string $action action to call of base controller
 	 * @return void
 	 */
-	 public function indexAction($controller = 'standard', $action = 'index') {
+	 public function indexAction() {
 
 				// FIXME this can be removed again once Doctrine is fixed (see fixMethodsAndAdvicesArrayForDoctrineProxiesCode())
 			$this->Flow_Aop_Proxy_fixMethodsAndAdvicesArrayForDoctrineProxies();
 		if (isset($this->Flow_Aop_Proxy_methodIsInAdviceMode['indexAction'])) {
-		$result = parent::indexAction($controller, $action);
+		$result = parent::indexAction();
 
 		} else {
 			$this->Flow_Aop_Proxy_methodIsInAdviceMode['indexAction'] = TRUE;
@@ -241,9 +283,6 @@ class StandardController extends StandardController_Original implements \TYPO3\F
 			
 					$methodArguments = array();
 
-				$methodArguments['controller'] = $controller;
-				$methodArguments['action'] = $action;
-			
 					$advices = $this->Flow_Aop_Proxy_targetMethodsAndGroupedAdvices['indexAction']['TYPO3\Flow\Aop\Advice\BeforeAdvice'];
 					$joinPoint = new \TYPO3\Flow\Aop\JoinPoint($this, 'project\emulate\Controller\StandardController', 'indexAction', $methodArguments);
 					foreach ($advices as $advice) {
@@ -365,31 +404,23 @@ class StandardController extends StandardController_Original implements \TYPO3\F
 				$this->authenticationManager = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('d4b358f5a262d346229c2bf11ebd0c1d',  $authenticationManager_reference, 'TYPO3\Flow\Security\Authentication\AuthenticationProviderManager', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface'); });
 			}
 		}
-		$securityContext_reference = &$this->securityContext;
-		$this->securityContext = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('TYPO3\Flow\Security\Context');
-		if ($this->securityContext === NULL) {
-			$this->securityContext = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('48836470c14129ade5f39e28c4816673', $securityContext_reference);
-			if ($this->securityContext === NULL) {
-				$this->securityContext = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('48836470c14129ade5f39e28c4816673',  $securityContext_reference, 'TYPO3\Flow\Security\Context', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('TYPO3\Flow\Security\Context'); });
+		$user_reference = &$this->user;
+		$this->user = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('project\emulate\Domain\Model\User');
+		if ($this->user === NULL) {
+			$this->user = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('6b25dc13ed43b23c6060bd7ce4793870', $user_reference);
+			if ($this->user === NULL) {
+				$this->user = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('6b25dc13ed43b23c6060bd7ce4793870',  $user_reference, 'project\emulate\Domain\Model\User', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('project\emulate\Domain\Model\User'); });
 			}
 		}
-		$accountRepository_reference = &$this->accountRepository;
-		$this->accountRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('TYPO3\Flow\Security\AccountRepository');
-		if ($this->accountRepository === NULL) {
-			$this->accountRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('d68c73088546244eb016f396195a461c', $accountRepository_reference);
-			if ($this->accountRepository === NULL) {
-				$this->accountRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('d68c73088546244eb016f396195a461c',  $accountRepository_reference, 'TYPO3\Flow\Security\AccountRepository', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('TYPO3\Flow\Security\AccountRepository'); });
+		$this->emulate = new \project\emulate\Domain\Model\Emulate();
+		$userAccountRepository_reference = &$this->userAccountRepository;
+		$this->userAccountRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('project\emulate\Domain\Repository\UserAccountRepository');
+		if ($this->userAccountRepository === NULL) {
+			$this->userAccountRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('3b40f640b82e56dbc2defeaf521cbbd0', $userAccountRepository_reference);
+			if ($this->userAccountRepository === NULL) {
+				$this->userAccountRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('3b40f640b82e56dbc2defeaf521cbbd0',  $userAccountRepository_reference, 'project\emulate\Domain\Repository\UserAccountRepository', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('project\emulate\Domain\Repository\UserAccountRepository'); });
 			}
 		}
-		$accountFactory_reference = &$this->accountFactory;
-		$this->accountFactory = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('TYPO3\Flow\Security\AccountFactory');
-		if ($this->accountFactory === NULL) {
-			$this->accountFactory = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getLazyDependencyByHash('f316baee16699e7bca10b2c9f1eac706', $accountFactory_reference);
-			if ($this->accountFactory === NULL) {
-				$this->accountFactory = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->createLazyDependency('f316baee16699e7bca10b2c9f1eac706',  $accountFactory_reference, 'TYPO3\Flow\Security\AccountFactory', function() { return \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->get('TYPO3\Flow\Security\AccountFactory'); });
-			}
-		}
-		$this->requiredToken = new \TYPO3\Flow\Security\Authentication\Token\UsernamePassword();
 		$objectManager_reference = &$this->objectManager;
 		$this->objectManager = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('TYPO3\Flow\Object\ObjectManagerInterface');
 		if ($this->objectManager === NULL) {
@@ -457,18 +488,17 @@ class StandardController extends StandardController_Original implements \TYPO3\F
 $this->Flow_Injected_Properties = array (
   0 => 'settings',
   1 => 'authenticationManager',
-  2 => 'securityContext',
-  3 => 'accountRepository',
-  4 => 'accountFactory',
-  5 => 'requiredToken',
-  6 => 'objectManager',
-  7 => 'reflectionService',
-  8 => 'mvcPropertyMappingConfigurationService',
-  9 => 'viewConfigurationManager',
-  10 => 'systemLogger',
-  11 => 'validatorResolver',
-  12 => 'flashMessageContainer',
-  13 => 'persistenceManager',
+  2 => 'user',
+  3 => 'emulate',
+  4 => 'userAccountRepository',
+  5 => 'objectManager',
+  6 => 'reflectionService',
+  7 => 'mvcPropertyMappingConfigurationService',
+  8 => 'viewConfigurationManager',
+  9 => 'systemLogger',
+  10 => 'validatorResolver',
+  11 => 'flashMessageContainer',
+  12 => 'persistenceManager',
 );
 	}
 }

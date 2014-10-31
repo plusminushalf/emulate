@@ -1,0 +1,48 @@
+Uncaught exception #1301650951: No controller object was found for package "project.emulate", subpackage "", controller "standard" in route "Homepage :: Homepage".
+
+31 TYPO3\Fluid\ViewHelpers\Link\ActionViewHelper_Original::render("help", array|0|, "Standard", NULL, NULL, "", "", array|0|, FALSE, array|0|, FALSE, TRUE)
+30 call_user_func_array(array|2|, array|12|)
+29 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+28 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+27 FluidCache_project_emulate_Base_action_index_12292f940891744f87f64365a7d6b5b6fd8db781::{closure}()
+26 TYPO3\Fluid\Core\ViewHelper\AbstractConditionViewHelper::renderElseChild()
+25 TYPO3\Fluid\ViewHelpers\Security\IfHasRoleViewHelper_Original::render("project.emulate:User", NULL)
+24 call_user_func_array(array|2|, array|2|)
+23 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+22 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+21 FluidCache_project_emulate_Base_action_index_12292f940891744f87f64365a7d6b5b6fd8db781::section_4f9be057f0ea5d2ba72fd2c810e8d7b9aa98b469(TYPO3\Fluid\Core\Rendering\RenderingContext)
+20 TYPO3\Fluid\View\AbstractTemplateView::renderSection("Content", array|1|, FALSE)
+19 TYPO3\Fluid\ViewHelpers\RenderViewHelper_Original::render("Content", NULL, array|0|, FALSE)
+18 call_user_func_array(array|2|, array|4|)
+17 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::callRenderMethod()
+16 TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper::initializeArgumentsAndRender()
+15 FluidCache_project_emulate_Base_layout_Default_56e6a5ce392030dabe6633e256f03b51dc2b8215::render(TYPO3\Fluid\Core\Rendering\RenderingContext)
+14 TYPO3\Fluid\View\AbstractTemplateView::render()
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET / HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

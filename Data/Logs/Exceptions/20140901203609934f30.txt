@@ -1,0 +1,12 @@
+Uncaught exception #1265213849 in line 423 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Object/DependencyInjection/ProxyClassBuilder.php: The object "project\emulate\Domain\Repository\UserAccount" which was specified as a property in the object configuration of object "project\emulate\Controller\StandardController" (automatically registered class) does not exist. Check for spelling mistakes and if that dependency is correctly configured.
+
+10 TYPO3\Flow\Object\DependencyInjection\ProxyClassBuilder::buildPropertyInjectionCodeByString(TYPO3\Flow\Object\Configuration\Configuration, "userAccountRepository", "project\emulate\Domain\Repository\UserAccount")
+9 TYPO3\Flow\Object\DependencyInjection\ProxyClassBuilder::buildPropertyInjectionCode(TYPO3\Flow\Object\Configuration\Configuration)
+8 TYPO3\Flow\Object\DependencyInjection\ProxyClassBuilder::build()
+7 TYPO3\Flow\Command\CoreCommandController::compileCommand(FALSE)
+6 call_user_func_array(array|2|, array|1|)
+5 TYPO3\Flow\Cli\CommandController::callCommandMethod()
+4 TYPO3\Flow\Cli\CommandController::processRequest(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+2 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

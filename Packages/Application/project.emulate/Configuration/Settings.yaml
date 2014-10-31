@@ -6,3 +6,6 @@ TYPO3:
         providers:
           DefaultProvider:
             provider: PersistedUsernamePasswordProvider
+project:
+  emulate:
+    emulators: ['Emulate8086', 'emulate8085']

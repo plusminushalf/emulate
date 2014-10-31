@@ -1,0 +1,36 @@
+Uncaught exception #1: Error Processing Request
+
+15 project\emulate\Controller\RegistrationController_Original::accountRegistrationAction("", NULL)
+14 call_user_func_array(array|2|, array|2|)
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /registration/accountregistration HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Content-Length: 649
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Origin: http://typo.flow
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Referer: http://typo.flow/project.emulate/base/index
+Accept-Encoding: gzip,deflate
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+__referrer%5B%40package%5D=project.emulate&__referrer%5B%40subpackage%5D=&__referrer%5B%40controller%5D=Base&__referrer%5B%40action%5D=index&__referrer%5Barguments%5D=YTowOnt92c609d8fdba33de0b76718f202ac6940de380afc&__trustedProperties=a%3A1%3A%7Bs%3A11%3A%22UserAccount%22%3Ba%3A4%3A%7Bs%3A4%3A%22name%22%3Bi%3A1%3Bs%3A5%3A%22email%22%3Bi%3A1%3Bs%3A8%3A%22username%22%3Bi%3A1%3Bs%3A8%3A%22password%22%3Bi%3A1%3B%7D%7D016ec0f0931185d1ac5c4cd3ad4883759095ad67&__csrfToken=c4b4460993f3943f93157c67837fb34b&UserAccount%5Bname%5D=garvit&UserAccount%5Bemail%5D=garvitdelhi%40gmail.com&UserAccount%5Busername%5D=garvit&UserAccount%5Bpassword%5D=ilpcgarvit
+
+HTTP RESPONSE:
+[response was empty]

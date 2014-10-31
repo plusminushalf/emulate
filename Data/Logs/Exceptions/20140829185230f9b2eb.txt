@@ -1,0 +1,23 @@
+Uncaught exception #1355480641 in line 250 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Core/Booting/Scripts.php: Uncaught Exception
+  Pointcut expression lacks of 1 closing parenthesis/es, defined in
+  project\emulate\Aspect\AuthenticateAspect::authenticateUser
+  (TYPO3\Flow\Annotations\AfterThrowing advice)
+
+More Information
+  Exception code      #1168966690
+  File                /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Aop/Pointcut/PointcutExpressionParser.php line 383
+  Exception reference #20140829185230f11430
+
+
+12 TYPO3\Flow\Core\Booting\Scripts::executeCommand("typo3.flow:core:compile", array|16|)
+11 TYPO3\Flow\Core\Booting\Scripts::initializeProxyClasses(TYPO3\Flow\Core\Bootstrap)
+10 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+3 TYPO3\Flow\Http\RequestHandler::boot()
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

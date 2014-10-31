@@ -1,0 +1,17 @@
+Uncaught exception #1: Warning: preg_match(): Compilation failed: nothing to repeat at offset 1 in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Aop/Pointcut/PointcutMethodNameFilter.php line 100
+
+15 TYPO3\Flow\Error\ErrorHandler::handleError(2, "preg_match(): Compilation failed: nothing to repeat at offset 1", "/var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Aop/Pointcut/PointcutMethodNameFilter.php", 100, array|4|)
+14 preg_match("/^*$/", "__construct")
+13 TYPO3\Flow\Aop\Pointcut\PointcutMethodNameFilter::matches("project\emulate\Controller\StandardController", "__construct", "project\emulate\Controller\StandardController", 0)
+12 TYPO3\Flow\Aop\Pointcut\PointcutFilterComposite::matches("project\emulate\Controller\StandardController", "__construct", "project\emulate\Controller\StandardController", 0)
+11 TYPO3\Flow\Aop\Pointcut\Pointcut::matches("project\emulate\Controller\StandardController", "__construct", "project\emulate\Controller\StandardController", 0)
+10 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::addAdvicedMethodsToInterceptedMethods(array|0|, array|34|, "project\emulate\Controller\StandardController", array|12|)
+9 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::buildProxyClass("project\emulate\Controller\StandardController", array|12|)
+8 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::build()
+7 TYPO3\Flow\Command\CoreCommandController::compileCommand(FALSE)
+6 call_user_func_array(array|2|, array|1|)
+5 TYPO3\Flow\Cli\CommandController::callCommandMethod()
+4 TYPO3\Flow\Cli\CommandController::processRequest(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+2 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

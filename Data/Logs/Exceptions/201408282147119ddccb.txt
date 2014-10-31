@@ -1,0 +1,12 @@
+Uncaught exception #1303224472 in line 445 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Aop/Builder/ProxyClassBuilder.php: Refuse to introduce method firsttry into target class project\emulate\Controller\StandardController because it has no implementation code. You might want to create an around advice which implements this method.
+
+10 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::buildMethodsInterceptorCode("project\emulate\Controller\StandardController", array|2|)
+9 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::buildProxyClass("project\emulate\Controller\StandardController", array|12|)
+8 TYPO3\Flow\Aop\Builder\ProxyClassBuilder::build()
+7 TYPO3\Flow\Command\CoreCommandController::compileCommand(FALSE)
+6 call_user_func_array(array|2|, array|1|)
+5 TYPO3\Flow\Cli\CommandController::callCommandMethod()
+4 TYPO3\Flow\Cli\CommandController::processRequest(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Cli\Request, TYPO3\Flow\Cli\Response)
+2 TYPO3\Flow\Cli\CommandRequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()

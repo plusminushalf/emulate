@@ -1,0 +1,43 @@
+Uncaught exception #1377788621 in line 136 of /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Flow_Persistence_Doctrine_PersistenceManager.php: Detected modified or new objects (TYPO3\Flow\Security\Account, uuid:1da437d4-d727-079d-e7ff-c444e519f1b6) to be persisted which is not allowed for "safe requests"
+According to the HTTP 1.1 specification, so called "safe request" (usually GET or HEAD requests)
+should not change your data on the server side and should be considered read-only. If you need to add,
+modify or remove data, you should use the respective request methods (POST, PUT, DELETE and PATCH).
+
+If you need to store some data during a safe request (for example, logging some data for your analytics),
+you are still free to call PersistenceManager->persistAll() manually.
+
+20 TYPO3\Flow\Persistence\AbstractPersistenceManager::throwExceptionIfObjectIsNotWhitelisted(TYPO3\Flow\Security\Account)
+19 TYPO3\Flow\Persistence\Doctrine\PersistenceManager_Original::persistAll(TRUE)
+18 TYPO3\Flow\Package::TYPO3\Flow\{closure}(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, project\emulate\Controller\RegistrationController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+17 Closure::__invoke(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, project\emulate\Controller\RegistrationController, "TYPO3\Flow\Mvc\Dispatcher::afterControllerInvocation")
+16 call_user_func_array(array|2|, array|4|)
+15 TYPO3\Flow\SignalSlot\Dispatcher::dispatch("TYPO3\Flow\Mvc\Dispatcher", "afterControllerInvocation", array|3|)
+14 TYPO3\Flow\SignalSlot\SignalAspect_Original::forwardSignalToDispatcher(TYPO3\Flow\Aop\JoinPoint)
+13 TYPO3\Flow\Aop\Advice\AbstractAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+12 TYPO3\Flow\Mvc\Dispatcher::emitAfterControllerInvocation(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response, project\emulate\Controller\RegistrationController)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /project.emulate/registration/accountregistration HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.94 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+<html><head><meta http-equiv="refresh" content="0;url=http://typo.flow/project.emulate/base/index"/></head></html>

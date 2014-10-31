@@ -1,0 +1,49 @@
+Uncaught exception #1355480641 in line 250 of /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Core/Booting/Scripts.php: Uncaught Exception
+  Warning:
+  file_put_contents(/var/www/typo.flow/Data/Temporary/Development/AvailableProxyClasses.php):
+  failed to open stream: Permission denied in
+  /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Command/CoreCommandController.php
+  line 174
+
+More Information
+  Exception code      #1
+  File                /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Error/ErrorHandler.php line 77
+  Exception reference #2014102223431709912d
+
+
+17 TYPO3\Flow\Core\Booting\Scripts::executeCommand("typo3.flow:core:compile", array|16|)
+16 TYPO3\Flow\Core\Booting\Scripts::initializeProxyClasses(TYPO3\Flow\Core\Bootstrap)
+15 TYPO3\Flow\Core\Booting\Scripts::recompileClasses(TYPO3\Flow\Core\Bootstrap)
+14 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+13 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+12 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+11 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+10 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+3 TYPO3\Flow\Http\RequestHandler::boot()
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /emulate/emulate8086/Standard/getRegisterValue HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Content-Length: 36
+Accept: */*
+Origin: http://typo.flow
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://typo.flow/emulator
+Accept-Encoding: gzip,deflate
+Accept-Language: en-US,en;q=0.8
+
+data=%7B%22register%22%3A%22AX%22%7D
+
+HTTP RESPONSE:
+[response was empty]

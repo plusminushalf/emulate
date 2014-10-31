@@ -7,8 +7,9 @@ namespace project\emulate\Controller;
  *                                                                        */
 
 use TYPO3\Flow\Annotations as Flow;
+use TYPO3\Flow\Mvc\Controller\ActionController;
 
-class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
+class StandardController extends ActionController {
 
 	/**
 	 * @var \TYPO3\Flow\Security\Authentication\AuthenticationManagerInterface
@@ -17,90 +18,133 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	protected $authenticationManager;
 
 	/**
-	 * @var \TYPO3\Flow\Security\Context
+	 * @Flow\Inject
+	 * @var project\emulate\Domain\Model\User
+	 */
+	protected $user;
+
+	/**
+	 * Bootstrap for Emulator.
+	 * @var project\emulate\Domain\Model\Emulate
 	 * @Flow\Inject
 	 */
-	protected $securityContext;
+	protected $emulate;
 
 	/**
-     * @var \TYPO3\Flow\Security\AccountRepository
-     * @Flow\Inject
-     */
-    protected $accountRepository;
-
-    /**
-     * @var \TYPO3\Flow\Security\AccountFactory
-     * @Flow\Inject
-     */
-    protected $accountFactory;
-
-    /**
-     * [$requiredToken description]
-     * @var \TYPO3\Flow\Security\Authentication\Token\UsernamePassword
-     * @Flow\Inject
-     */
-    protected $requiredToken;
-
-	protected function initializeIndexAction() {
-	}
+	 * account Repository
+	 * @var project\emulate\Domain\Repository\UserAccountRepository
+	 * @Flow\Inject
+	 */
+	protected $userAccountRepository;
 
 	/**
-	 * boot code
-	 * @param string $controller controller of request
-	 * @param  string $action action to call of base controller
 	 * @return void
 	 */
-	public function indexAction($controller = "standard", $action = "index") {
-		$token = $this->securityContext->getAuthenticationTokensOfType('\TYPO3\Flow\Security\Authentication\Token\UsernamePassword')[0];
-		$account = $this->securityContext->getAccount();
-		if($token->isAuthenticated()) {
-			return "<a href='/logout'>logout</a>";
-		}
-		// if($token->isAuthenticated()) {
-		// 	return "<a href='/logout'>logout</a>";
-		// }
-		if($action != "index" || $controller != "standard") {
-			$this->forward($action, $controller);
+	public function indexAction() {
+		$this->view->assign('error', $this->user->getProperty());
+		if($this->user->getAuthenticated()) {
+			$this->forward('home');
 		}
 	}
 
+	/**
+	 * @return void
+	 */
 	public function logoutAction() {
+		$this->user->reset();
+		if($this->user->getAuthenticated()) {
+			$this->user->setAuthenticated(FALSE);
+		}
 		$this->authenticationManager->logout();
-		$this->redirect('index');
+		$this->forward('index');
 	}
 
 	/**
-	 * submiting form
+	 * user logged in time to get working showing timeline view :)
 	 * @return void
 	 */
-	public function loginAction() {
-        $this->authenticationManager->authenticate();
-        // return "logedin";
-        $this->redirect('index');
-		// return "string";
+	public function homeAction() {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$this->view->assign('active', 'home');
+		$this->view->assign('user', $this->user);
+
+		// Start your code here.
 	}
 
 	/**
-     * save the registration
-     * @param string $username
-     * @param string $password
-     */
-	public function signupAction($username, $password) {
-		$defaultRole = 'user';
-  
-        if($username == '' || strlen($username) < 3) {
-            $this->redirect('index');
-        } else {
-  
-            // create a account with password an add it to the accountRepository
-            $account = $this->accountFactory->createAccountWithPassword($username, $password);
-            $this->accountRepository->add($account);
-            // add a message and redirect to the login form
-            $this->redirect('index');
-        }
-  
-        // redirect to the login form
-        $this->redirect('index');
+	 * It's Emulator time :D, let's boot it up.
+	 * @return void
+	 */
+	public function emulatorAction() {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$this->view->assign('active', 'emulator');
+		$this->view->assign('user', $this->user);
+
+		// Start your code here.
+		$this->view->assign('readyState', FALSE);
+		$this->emulate->boot();
+		if($this->emulate->ready()) {
+			$this->view->assign('readyState', TRUE);
+			$emulator = $this->emulate->getEmulatorLoaded();
+			$this->view->assign('partial', $emulator->getKey());
+			$this->view->assign('emulator', $emulator);
+		} else {
+			$this->view->assign('emulators', $this->emulate->getEmulators());
+		}
+	}
+
+	/**
+	 * loads the passedEmulator
+	 * @param  string $Emulator
+	 * @return void
+	 */
+	public function loadEmulatorAction($Emulator) {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$account = $this->user->getUserAccount();
+		$account->setEmulatorPreference($Emulator);
+		$this->userAccountRepository->update($account);
+		$this->forward('emulator');
+	}
+
+	/**
+	 * help out section
+	 * @return void
+	 */
+	public function helpAction() {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
+		$this->view->assign('active', 'help');
+		$this->view->assign('user', $this->user);
+
+		// Start your code here.
+	}
+
+	/**
+	 * emulator controller loading
+	 * @param  string $emulator
+	 * @param  string $controller
+	 * @param  string $action
+	 * @param  string $data
+	 * @return string
+	 */
+	public function emulatorControllerAction($emulator, $controller, $action, $data) {
+		if(!$this->user->getAuthenticated()) {
+			return "logout";
+		}
+		$this->emulate->boot();
+		if($this->emulate->ready()) {
+			$data = json_decode($data, true);
+			return $this->emulate->callEmulatorController(ucfirst($emulator), $controller, $action, $data);
+		} else {
+			$this->forward('index');
+		}
 	}
 
 }
