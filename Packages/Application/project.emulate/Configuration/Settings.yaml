@@ -8,4 +8,4 @@ TYPO3:
             provider: PersistedUsernamePasswordProvider
 project:
   emulate:
-    emulators: ['emulate8086', 'emulate8085']
+    emulators: ['Emulate8086', 'emulate8085']

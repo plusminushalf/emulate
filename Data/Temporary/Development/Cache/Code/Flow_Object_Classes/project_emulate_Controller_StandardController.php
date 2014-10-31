@@ -103,6 +103,9 @@ class StandardController_Original extends ActionController {
 	 * @return void
 	 */
 	public function loadEmulatorAction($Emulator) {
+		if(!$this->user->getAuthenticated()) {
+			$this->forward('index');
+		}
 		$account = $this->user->getUserAccount();
 		$account->setEmulatorPreference($Emulator);
 		$this->userAccountRepository->update($account);
@@ -132,12 +135,15 @@ class StandardController_Original extends ActionController {
 	 * @return string
 	 */
 	public function emulatorControllerAction($emulator, $controller, $action, $data) {
+		if(!$this->user->getAuthenticated()) {
+			return "logout";
+		}
 		$this->emulate->boot();
 		if($this->emulate->ready()) {
 			$data = json_decode($data, true);
-			return $this->emulate->callEmulatorController($emulator, $controller, $action, $data);
+			return $this->emulate->callEmulatorController(ucfirst($emulator), $controller, $action, $data);
 		} else {
-			return "Got some problem while booting up your emulator please refresh your page.";
+			$this->forward('index');
 		}
 	}
 

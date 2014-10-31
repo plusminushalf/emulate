@@ -1,0 +1,42 @@
+Uncaught exception #1: Warning: array_key_exists() expects parameter 2 to be array, boolean given in /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Classes_Domain_Model_Segments.php line 99
+
+21 TYPO3\Flow\Error\ErrorHandler::handleError(2, "array_key_exists() expects parameter 2 to be array, boolean given", "/var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_emulate8086_Classes_Domain_Model_Segments.php", 99, array|4|)
+20 array_key_exists(1, TRUE)
+19 project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments_Original::setValueInCode(517, "MOV AX,12")
+18 TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\emulate8086\Classes\Domain\Model\Segments::setValueInCode(517, "MOV AX,12")
+17 project\emulate\Emulators\emulate8086\Classes\Controllers\StandardController_Original::saveCodeAction(array|2|)
+16 project\emulate\Domain\Model\Emulate_Original::callEmulatorController("emulate8086", "Standard", "saveCode", array|2|)
+15 project\emulate\Controller\StandardController_Original::emulatorControllerAction("emulate8086", "Standard", "saveCode", "{"517":{"code":"MOV AX,12","memory":2},"519":{"code":"MOV BH,5","memory":2}}")
+14 call_user_func_array(array|2|, array|4|)
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /emulate/emulate8086/Standard/saveCode HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Content-Length: 147
+Accept: */*
+Origin: http://typo.flow
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.104 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://typo.flow/emulator
+Accept-Encoding: gzip,deflate
+Accept-Language: en-US,en;q=0.8
+
+data=%7B%22517%22%3A%7B%22code%22%3A%22MOV+AX%2C12%22%2C%22memory%22%3A2%7D%2C%22519%22%3A%7B%22code%22%3A%22MOV+BH%2C5%22%2C%22memory%22%3A2%7D%7D
+
+HTTP RESPONSE:
+[response was empty]

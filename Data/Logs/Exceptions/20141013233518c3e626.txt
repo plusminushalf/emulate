@@ -1,0 +1,31 @@
+Uncaught exception #1: Warning: unlink(/var/www/typo.flow/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_FindMatchResults/2af023dbc24c9e310da1707737fe2872): No such file or directory in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Cache/Backend/FileBackend.php line 240
+
+18 TYPO3\Flow\Error\ErrorHandler::handleError(2, "unlink(/var/www/typo.flow/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_FindMatchResults/2af023dbc24c9e310da1707737fe2872): No such file or directory", "/var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Cache/Backend/FileBackend.php", 240, array|2|)
+17 unlink("/var/www/typo.flow/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_FindMatchResults/2af023dbc24c9e310da1707737fe2872")
+16 TYPO3\Flow\Cache\Backend\FileBackend::remove("2af023dbc24c9e310da1707737fe2872")
+15 TYPO3\Flow\Cache\Backend\FileBackend::set("2af023dbc24c9e310da1707737fe2872", "a:3:{s:8:"@package";s:15:"project.emulate";s:11:"@controller";s:8:"standard";s:7:"@action";s:5:"index";}", array|0|, NULL)
+14 TYPO3\Flow\Cache\Frontend\VariableFrontend::set("2af023dbc24c9e310da1707737fe2872", array|3|, array|0|)
+13 TYPO3\Flow\Mvc\Routing\RouterCachingService_Original::storeMatchResults(TYPO3\Flow\Http\Request, array|3|)
+12 TYPO3\Flow\Mvc\Routing\Router_Original::findMatchResults(TYPO3\Flow\Http\Request)
+11 TYPO3\Flow\Mvc\Routing\Router_Original::route(TYPO3\Flow\Http\Request)
+10 TYPO3\Flow\Mvc\Routing\Router::route(TYPO3\Flow\Http\Request)
+9 call_user_func_array(array|2|, array|1|)
+8 TYPO3\Flow\Mvc\Routing\Router::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Fluid\Core\Widget\AjaxWidgetRoutingAspect_Original::routeAjaxWidgetRequestAdvice(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Routing\Router::route(TYPO3\Flow\Http\Request)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /index HTTP/1.1
+Host: 192.168.1.4:8080
+User-Agent: ApacheBench/2.3
+Accept: */*
+
+
+
+HTTP RESPONSE:
+[response was empty]

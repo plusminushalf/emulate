@@ -3,6 +3,7 @@
 namespace project\emulate\Domain\Model;
 
 use TYPO3\Flow\Annotations as Flow;
+use project\emulate\Domain\Model\LoadInterface;
 
 /**
 * bootstrap code for emulator
@@ -97,11 +98,15 @@ class Emulate {
 	public function load($emulator) {
 		try {
 			$this->emulatorsConfig[$emulator] = $this->objectManager->get('project\emulate\Emulators\\' . $emulator . '\Configuration\Config');
-			$loadEmulator = $this->objectManager->get('project\emulate\Emulators\\' . $emulator . '\Classes\Load');
-			$loadEmulator->boot();
-			if($loadEmulator->ready()) {
-				$this->emulatorLoaded = $this->emulatorsConfig[$emulator];
-				$this->readyState = TRUE;
+			$loadEmulator = $this->objectManager->get('project\emulate\Emulators\\' . $emulator . '\Src\Load');
+			if($loadEmulator instanceof LoadInterface) {
+				$loadEmulator->boot();
+				if($loadEmulator->ready()) {
+					$this->emulatorLoaded = $this->emulatorsConfig[$emulator];
+					$this->readyState = TRUE;
+				} else {
+					throw new \TYPO3\Flow\Object\Exception\UnknownObjectException("Couldn't Load the spcified Emulator", 1409597948);
+				}
 			} else {
 				throw new \TYPO3\Flow\Object\Exception\UnknownObjectException("Couldn't Load the spcified Emulator", 1409597948);
 			}
@@ -145,7 +150,7 @@ class Emulate {
 	 * @return string
 	 */
 	public function callEmulatorController($emulator, $controller, $action, $data) {
-		$controller = $this->objectManager->get('project\emulate\Emulators\\' . $emulator . '\Classes\Controllers\\' . $controller . 'Controller');
+		$controller = $this->objectManager->get('project\emulate\Emulators\\' . $emulator . '\Src\Controllers\\' . $controller . 'Controller');
 		$action = $action . 'Action';
 		return $controller->$action($data);
 	}

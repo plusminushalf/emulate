@@ -51,7 +51,7 @@ class UserAccountController_Original extends \TYPO3\Flow\Mvc\Controller\ActionCo
 	 * @return void
 	 */
 	public function socialRegistrationAction() {
-		$this->redirect('index', 'Base');
+		$this->forward('index', 'Base');
 	}
 
 	/**
@@ -61,7 +61,7 @@ class UserAccountController_Original extends \TYPO3\Flow\Mvc\Controller\ActionCo
 	public function accountRegistrationAction(userAccount $userAccount = NULL) {
 		$this->user->setProperty(['UsernameRegistrationError'=>'']);
 		if ($userAccount == NULL || $this->user->getAuthenticated()) {
-			$this->redirect('index', 'Standard');
+			$this->forward('index', 'Standard');
 		}
 		$userAccount->setProfilePic("");
 		$defaultRole = array('project.emulate:User');
@@ -72,14 +72,14 @@ class UserAccountController_Original extends \TYPO3\Flow\Mvc\Controller\ActionCo
         $this->accountRepository->add($account);
         $userAccount->setPassword('');
         $this->userAccountRepository->add($userAccount);
-        // add a message and redirect to the login form
+        // add a message and forward to the login form
         $authenticationTokens = $this->securityContext->getAuthenticationTokensOfType('TYPO3\Flow\Security\Authentication\Token\UsernamePassword');
 		if (count($authenticationTokens) === 1) {
     		$authenticationTokens[0]->setAccount($account);
     		$authenticationTokens[0]->setAuthenticationStatus(\TYPO3\Flow\Security\Authentication\TokenInterface::AUTHENTICATION_SUCCESSFUL);
     		$this->session->start();
 		}
-        $this->redirect('index', 'Standard');
+        $this->forward('index', 'Standard');
 	}
 
 	// public function errorAction() {
