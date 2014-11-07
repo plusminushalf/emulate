@@ -59,7 +59,7 @@ class Validator {
 		$this->instruction = $this->line[0];
 		$operands = $this->line[1];
 		if(strpos($operands, ',') === false) {
-			$this->operand1 = null;
+            $this->operand1 = $this->getType($operands);
 			$this->operand2 = null;
 		} else {
 			$operands = split(',', $operands);
@@ -298,10 +298,11 @@ class Validator {
 		],
 	'JA'=> [
 			'operands'=> [
-				[ 'operand1'=>5, 'operand2'=> null ]
+				[ 'operand1'=>5, 'operand2'=> null ],
+                [ 'operand1'=>4, 'operand2'=> null ]
 			],
 			'memory'=> [
-				[ 'memory'=>0x02 ]
+				[ 'memory'=>0x02 ], [ 'memory'=>0x02 ]
 			],
 			'status'=>0
 		],
@@ -632,20 +633,22 @@ class Validator {
 	'DEC'=> [
 			'operands'=> [
 				[ 'operand1'=>1,  'operand2'=>null ],
+                [ 'operand1'=>2,  'operand2'=>null ],
 				[ 'operand1'=>6,  'operand2'=>null ]
 			],
 			'memory'=> [
-			[ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
-				],
+                [ 'memory'=>0x1 ], [ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
+			],
 			'status'=>0
 		],
 	'DIV'=> [
 			'operands'=> [
 				[ 'operand1'=>1,  'operand2'=>null ],
+                [ 'operand1'=>2,  'operand2'=>null ],
 				[ 'operand1'=>6,  'operand2'=>null ]
 			],
 			'memory'=> [
-			[ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
+			[ 'memory'=>0x1 ], [ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
 				],
 			'status'=>0
 		],
@@ -830,6 +833,7 @@ class Validator {
 				[ 'operand1'=>6,  'operand2'=>5],
 				[ 'operand1'=>2,  'operand2'=>2],
 				[ 'operand1'=>2,  'operand2'=>6],
+                [ 'operand1'=>6,  'operand2'=>2],
 				[ 'operand1'=>1,  'operand2'=>4]
 			],
 			'memory'=> [
@@ -842,6 +846,7 @@ class Validator {
 				[ 'memory'=>0x3 ],
 				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ],
+                [ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ]
 			],
 			'status'=>0
@@ -1216,6 +1221,7 @@ class Validator {
 				[ 'operand1'=>6,  'operand2'=>5],
 				[ 'operand1'=>2,  'operand2'=>2],
 				[ 'operand1'=>2,  'operand2'=>6],
+                [ 'operand1'=>6,  'operand2'=>2],
 				[ 'operand1'=>1,  'operand2'=>4]
 			],
 			'memory'=> [
@@ -1227,6 +1233,7 @@ class Validator {
 				[ 'memory'=>0x3 ],
 				[ 'memory'=>0x3 ],
 				[ 'memory'=>0x2 ],
+                [ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ]
 			],

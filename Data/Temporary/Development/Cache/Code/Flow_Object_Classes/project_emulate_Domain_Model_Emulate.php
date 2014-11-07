@@ -18,7 +18,7 @@ class Emulate_Original {
 
 	/**
 	 * user session
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 * @Flow\Inject
 	 */
 	protected $user;
@@ -38,14 +38,14 @@ class Emulate_Original {
 
 	/**
 	 * [$objectManager description]
-	 * @var TYPO3\Flow\Object\ObjectManager
+	 * @var \TYPO3\Flow\Object\ObjectManager
 	 * @Flow\Inject
 	 */
 	protected $objectManager;
 
 	/**
 	 * account Repository
-	 * @var project\emulate\Domain\Repository\UserAccountRepository
+	 * @var \project\emulate\Domain\Repository\UserAccountRepository
 	 * @Flow\Inject
 	 */
 	protected $userAccountRepository;
@@ -55,20 +55,6 @@ class Emulate_Original {
 	 * @var object
 	 */
 	protected $emulatorLoaded;
-
-    /**
-     * [injectEmulator description]
-     * @return void
-     */
-    public function injectEmulator() {
-    	foreach ($this->settings as $value) {
-    		try {
-    			$this->emulatorsConfig[$value] = $this->objectManager->get('project\emulate\Emulators\\' . $value . '\Configuration\Config');
-    		} catch(\TYPO3\Flow\Object\Exception\UnknownObjectException $e) {
-    			continue;
-    		}
-    	}
-    }
 
 	/**
 	 * boots up the emulators
@@ -122,7 +108,13 @@ class Emulate_Original {
 	 * @return void
 	 */
 	public function getEmulatorsList() {
-		$this->injectEmulator();
+        foreach ($this->settings as $value) {
+            try {
+                $this->emulatorsConfig[$value] = $this->objectManager->get('project\emulate\Emulators\\' . $value . '\Configuration\Config');
+            } catch(\TYPO3\Flow\Object\Exception\UnknownObjectException $e) {
+                continue;
+            }
+        }
 	}
 
 	/**

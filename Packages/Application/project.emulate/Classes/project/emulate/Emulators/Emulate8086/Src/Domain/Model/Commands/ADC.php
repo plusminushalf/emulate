@@ -23,10 +23,16 @@ class ADC implements CommandInterface {
 
 	/**
 	 * user session
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 * @Flow\Inject
 	 */
 	protected $user;
+
+    /**
+     * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Validator
+     * @Flow\Inject
+     */
+    protected $validator;
 
 	/**
 	 * Controller
@@ -61,9 +67,15 @@ class ADC implements CommandInterface {
 
 	/**
 	 * operand2 extracted from line
-	 * @var project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
+	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
 	 */
 	protected $flags;
+
+    /**
+     * Errors that occured during processing
+     * @var string
+     */
+    public $error = '';
 
 	/**
 	 * Injects Memory Repository and Memory for the specific user
@@ -78,7 +90,7 @@ class ADC implements CommandInterface {
 	 * executes the command with given parameters.
 	 * @param  string $operand1
 	 * @param  string $operand2
-	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
+     * @return boolean|int|array true if executed successfully, false on software interept, -1 if problem occurs arrar for jump
 	 */
 	public function execute($operand1, $operand2) {
 		$this->operand1 = $operand1;
@@ -164,9 +176,8 @@ class ADC implements CommandInterface {
 		$value2 = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
 		$value1 = json_decode($this->controller->getRegisterValueAction(["register"=> $operand1]), true)['value'];
 		$value = hexdec($value1) + hexdec($value2) + $this->flags->getCarry();
-		$value = dechex($value);
 		$this->setFlags($value);
-		$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> hexdec($value)]);
+		$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> $value]);
 		return true;
 	}
 
@@ -177,7 +188,10 @@ class ADC implements CommandInterface {
 	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
 	 */
 	protected function RegImediate($operand1, $operand2) {
-		$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> hexdec($operand2)]);
+		$value1 = json_decode($this->controller->getRegisterValueAction(["register"=> $operand1]), true)['value'];
+		$value = hexdec($value1) + hexdec($operand2) + $this->flags->getCarry();
+		$this->setFlags($value);
+		$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> $value]);
 		return true;
 	}
 
@@ -190,24 +204,30 @@ class ADC implements CommandInterface {
 	protected function RegMemory($operand1, $operand2) {
 		$operand2 = substr($operand2, 1, -1);
 		$type = $this->validator->getType($operand2);
+        $value = '';
 		if($type == 1) {
 			$value = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
 			$valueLSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $value]), true)['value'];
-			$value = dechex($value);
-			$value = hexdec(++$value);
+			$value = hexdec($value);
+			$value = dechex(++$value);
 			$valueMSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $value]), true)['value'];
-			$value = $valueMSB['value'] . $valueLSB['value'];
-			$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> hexdec($value)]);
+			$value2 = $valueMSB . $valueLSB;
+			$value1 = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
+			$value = hexdec($value1) + hexdec($value2) + $this->flags->getCarry();
+			$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> $value]);
 			return true;
 		} elseif($type == 4 || $type == 5) {
 			$valueLSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand2]), true)['value'];
-			$operand2 = dechex($operand2);
-			$operand2 = hexdec(++$operand2);
+			$operand2 = hexdec($operand2);
+			$operand2 = dechex(++$operand2);
 			$valueMSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand2]), true)['value'];
-			$value = $valueMSB['value'] . $valueLSB['value'];
+			$value2 = $valueMSB . $valueLSB;
+			$value1 = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
+			$value = hexdec($value1) + hexdec($value2) + $this->flags->getCarry();
 			$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> hexdec($value)]);
 			return true;
 		}
+		$this->setFlags($value);
 		$this->error = "{$operand1} & {$operand2} are not correct operands for mov instruction";
 		return -1;
 	}
@@ -233,7 +253,7 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = $operand2 . substr($value, 2);
+				$value = hexdec($operand2) + hexdec(substr($value, 2)) + $this->flags->getCarry();
 				break;
 			case 'AL':
 				$register = 'AX';
@@ -242,7 +262,7 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = substr($value, 0, 2) . $operand2;
+				$value = hexdec($operand2) + hexdec(substr($value, 0, 2)) + $this->flags->getCarry();
 				break;
 			case 'BH':
 				$register = 'BX';
@@ -251,7 +271,7 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = $operand2 . substr($value, 2);
+				$value = hexdec($operand2) + hexdec(substr($value, 2)) + $this->flags->getCarry();
 				break;
 			case 'BL':
 				$register = 'BX';
@@ -260,7 +280,7 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = substr($value, 0, 2) . $operand2;
+				$value = hexdec($operand2) + hexdec(substr($value, 0, 2)) + $this->flags->getCarry();
 				break;
 			case 'CH':
 				$register = 'CX';
@@ -269,7 +289,7 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = $operand2 . substr($value, 2);
+				$value = hexdec($operand2) + hexdec(substr($value, 2)) + $this->flags->getCarry();
 				break;
 			case 'CL':
 				$register = 'CX';
@@ -278,7 +298,7 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = substr($value, 0, 2) . $operand2;
+				$value = hexdec($operand2) + hexdec(substr($value, 0, 2)) + $this->flags->getCarry();
 				break;
 			case 'DH':
 				$register = 'DX';
@@ -287,7 +307,7 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = $operand2 . substr($value, 2);
+				$value = hexdec($operand2) + hexdec(substr($value, 2)) + $this->flags->getCarry();
 				break;
 			case 'DL':
 				$register = 'DX';
@@ -296,13 +316,14 @@ class ADC implements CommandInterface {
 				while ($c--) {
 					$value = '0' . $value;
 				}
-				$value = substr($value, 0, 2) . $operand2;
+				$value = hexdec($operand2) + hexdec(substr($value, 0, 2)) + $this->flags->getCarry();
 				break;
 			default:
 				$this->error = "{$operand1} & {$operand2} are not correct operands for mov instruction";
 				return -1;
 		}
-		$this->controller->setRegisterValueAction([ "register"=> $register, "value"=> hexdec($value)]);
+		$this->setFlags($value);
+		$this->controller->setRegisterValueAction([ "register"=> $register, "value"=> $value]);
 		return true;
 	}
 
@@ -397,10 +418,6 @@ class ADC implements CommandInterface {
 		$type = $this->validator->getType($operand2);
 		if($type == 1) {
 			$value = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
-			$c = 4 - strlen($value);
-			while ($c--) {
-				$value = '0' . $value;
-			}
 			$value = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $value]), true)['value'];
 			$c = 4 - strlen($value);
 			while ($c--) {
@@ -426,18 +443,28 @@ class ADC implements CommandInterface {
 	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
 	 */
 	protected function MemoryReg($operand1, $operand2) {
-		$value = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
-		$c = 4 - strlen($value);
-		while ($c--) {
-			$value = '0' . $value;
-		}
-		$valueLSB = substr($value, 2);
-		$valueMSB = substr($value, 0, 2);
+		$value1 = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
+//		$c = 4 - strlen($value);
+//		while ($c--) {
+//			$value = '0' . $value;
+//		}
+//		$valueLSB = substr($value, 2);
+//		$valueMSB = substr($value, 0, 2);
 		$operand1 = substr($operand1, 1, -1);
-		$this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>hexdec($operand1), "value"=>hexdec($valueLSB)]);
-		$operand1 = hexdec($operand1);
-		$operand1 = dechex($operand1 + 1);
-		$this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>hexdec($operand1), "value"=>hexdec($valueMSB)]);
+        $operand1 = hexdec($operand1);
+        $value2LSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand1]), true)['value'];
+        $value2MSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand1 + 1]), true)['value'];
+        $value2 = $value2MSB . $value2LSB;
+        $value = hexdec($value1) + hexdec($value2) + $this->flags->getCarry();
+        $c = 4 - strlen($value);
+        while ($c--) {
+            $value = '0' . $value;
+        }
+        $valueLSB = substr(dechex($value), 2);
+        $valueMSB = substr(dechex($value), 0, 2);
+        $this->setFlags($value);
+        $this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>$operand1, "value"=>hexdec($valueLSB)]);
+        $this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>$operand1 + 1, "value"=>hexdec($valueMSB)]);
 		return true;
 	}
 
@@ -448,17 +475,21 @@ class ADC implements CommandInterface {
 	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
 	 */
 	protected function MemoryImediate($operand1, $operand2) {
-		$c = 4 - strlen($operand2);
-		while ($c--) {
-			$operand2 = '0' . $operand2;
-		}
-		$valueLSB = substr($operand2, 2);
-		$valueMSB = substr($operand2, 0, 2);
 		$operand1 = substr($operand1, 1, -1);
-		$this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>hexdec($operand1), "value"=>hexdec($valueLSB)]);
-		$operand1 = hexdec($operand1);
-		$operand1 = dechex($operand1 + 1);
-		$this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>hexdec($operand1), "value"=>hexdec($valueMSB)]);
+        $operand1 = hexdec($operand1);
+        $value2LSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand1]), true)['value'];
+        $value2MSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand1 + 1]), true)['value'];
+        $value2 = $value2MSB . $value2LSB;
+        $value = hexdec($operand2) + hexdec($value2) + $this->flags->getCarry();
+        $c = 4 - strlen($value);
+        while ($c--) {
+            $value = '0' . $value;
+        }
+        $valueLSB = substr(dechex($value), 2);
+        $valueMSB = substr(dechex($value), 0, 2);
+        $this->setFlags($value);
+        $this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>$operand1, "value"=>hexdec($valueLSB)]);
+        $this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>$operand1 + 1, "value"=>hexdec($valueMSB)]);
 		return true;
 	}
 
@@ -469,12 +500,21 @@ class ADC implements CommandInterface {
 	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
 	 */
 	protected function Memory8bitImediate($operand1, $operand2) {
-		$c = 2 - strlen($operand2);
-		while ($c--) {
-			$operand2 = '0' . $operand2;
-		}
 		$operand1 = substr($operand1, 1, -1);
-		$this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>hexdec($operand1), "value"=>hexdec($operand2)]);
+        $operand1 = hexdec($operand1);
+        $value2 = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand1]), true)['value'];
+        $value = hexdec($operand2) + hexdec($value2) + $this->flags->getCarry();
+        $c = 4 - strlen($value);
+        while ($c--) {
+            $value = '0' . $value;
+        }
+        $valueLSB = substr(dechex($value), 2);
+        $valueMSB = substr(dechex($value), 0, 2);
+        $this->setFlags($value);
+        $this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>$operand1, "value"=>hexdec($valueLSB)]);
+        if($valueMSB != 0) {
+            $this->controller->setMemoryValueAction(["segment" => 0x1000, "offset" => $operand1 + 1, "value" => hexdec($valueMSB)]);
+        }
 		return true;
 	}
 
@@ -485,7 +525,7 @@ class ADC implements CommandInterface {
 	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
 	 */
 	protected function MemoryReg8bit($operand1, $operand2) {
-		$value = '';
+        $value = '';
 		switch ($operand2) {
 			case 'AH':
 				$value = json_decode($this->controller->getRegisterValueAction(["register"=> 'AX']), true)['value'];
@@ -555,9 +595,7 @@ class ADC implements CommandInterface {
 				$this->error = "{$operand1} & {$operand2} are not correct operands for mov instruction";
 				return -1;
 		}
-		$operand1 = substr($operand1, 1, -1);
-		$this->controller->setMemoryValueAction(["segment"=>0x1000, "offset"=>hexdec($operand1), "value"=>hexdec($value)]);
-		return true;
+        return $this->Memory8bitImediate($operand1, $value);
 	}
 
 }

@@ -59,7 +59,7 @@ class Validator_Original {
 		$this->instruction = $this->line[0];
 		$operands = $this->line[1];
 		if(strpos($operands, ',') === false) {
-			$this->operand1 = null;
+            $this->operand1 = $this->getType($operands);
 			$this->operand2 = null;
 		} else {
 			$operands = split(',', $operands);
@@ -130,22 +130,22 @@ class Validator_Original {
 	'AAA'=> [
 			'operands' => [ [ 'operand1'=>null, 'operand2'=> null ] ],
 			'memory'=> [ [ 'memory'=>0x1 ] ],
-			'status'=>0
+			'status'=>1
 		],
 	'AAD'=> [
 			'operands' => [ [ 'operand1'=>null, 'operand2'=> null ] ],
 			'memory'=> [ [ 'memory'=>0x1 ] ],
-			'status'=>0
+			'status'=>1
 		],
 	'AAM'=> [
 			'operands' => [ [ 'operand1'=>null, 'operand2'=> null ] ],
 			'memory'=> [ [ 'memory'=>0x1 ] ],
-			'status'=>0
+			'status'=>1
 		],
 	'AAS'=> [
 			'operands' => [ [ 'operand1'=>null, 'operand2'=> null ] ],
 			'memory'=> [ [ 'memory'=>0x1 ] ],
-			'status'=>0
+			'status'=>1
 		],
 	'CBW'=> [
 			'operands' => [ [ 'operand1'=>null, 'operand2'=> null ] ],
@@ -190,7 +190,7 @@ class Validator_Original {
 	'HLT'=> [
 			'operands' => [ [ 'operand1'=>null, 'operand2'=> null ] ],
 			'memory'=> [ [ 'memory'=>0x1 ] ],
-			'status'=>0
+			'status'=>1
 		],
 	'INTO'=> [
 			'operands' => [ [ 'operand1'=>null, 'operand2'=> null ] ],
@@ -298,10 +298,11 @@ class Validator_Original {
 		],
 	'JA'=> [
 			'operands'=> [
-				[ 'operand1'=>5, 'operand2'=> null ]
+				[ 'operand1'=>5, 'operand2'=> null ],
+                [ 'operand1'=>4, 'operand2'=> null ]
 			],
 			'memory'=> [
-				[ 'memory'=>0x02 ]
+				[ 'memory'=>0x02 ], [ 'memory'=>0x02 ]
 			],
 			'status'=>0
 		],
@@ -632,20 +633,22 @@ class Validator_Original {
 	'DEC'=> [
 			'operands'=> [
 				[ 'operand1'=>1,  'operand2'=>null ],
+                [ 'operand1'=>2,  'operand2'=>null ],
 				[ 'operand1'=>6,  'operand2'=>null ]
 			],
 			'memory'=> [
-			[ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
-				],
+                [ 'memory'=>0x1 ], [ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
+			],
 			'status'=>0
 		],
 	'DIV'=> [
 			'operands'=> [
 				[ 'operand1'=>1,  'operand2'=>null ],
+                [ 'operand1'=>2,  'operand2'=>null ],
 				[ 'operand1'=>6,  'operand2'=>null ]
 			],
 			'memory'=> [
-			[ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
+			[ 'memory'=>0x1 ], [ 'memory'=>0x1 ], [ 'memory'=>0x1 ]
 				],
 			'status'=>0
 		],
@@ -830,6 +833,7 @@ class Validator_Original {
 				[ 'operand1'=>6,  'operand2'=>5],
 				[ 'operand1'=>2,  'operand2'=>2],
 				[ 'operand1'=>2,  'operand2'=>6],
+                [ 'operand1'=>6,  'operand2'=>2],
 				[ 'operand1'=>1,  'operand2'=>4]
 			],
 			'memory'=> [
@@ -842,6 +846,7 @@ class Validator_Original {
 				[ 'memory'=>0x3 ],
 				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ],
+                [ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ]
 			],
 			'status'=>0
@@ -1160,6 +1165,7 @@ class Validator_Original {
 				[ 'operand1'=>6,  'operand2'=>5],
 				[ 'operand1'=>2,  'operand2'=>2],
 				[ 'operand1'=>2,  'operand2'=>6],
+				[ 'operand1'=>6,  'operand2'=>2],
 				[ 'operand1'=>1,  'operand2'=>4]
 			],
 			'memory'=> [
@@ -1170,6 +1176,7 @@ class Validator_Original {
 				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x3 ],
 				[ 'memory'=>0x3 ],
+				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ]
@@ -1214,6 +1221,7 @@ class Validator_Original {
 				[ 'operand1'=>6,  'operand2'=>5],
 				[ 'operand1'=>2,  'operand2'=>2],
 				[ 'operand1'=>2,  'operand2'=>6],
+                [ 'operand1'=>6,  'operand2'=>2],
 				[ 'operand1'=>1,  'operand2'=>4]
 			],
 			'memory'=> [
@@ -1225,6 +1233,7 @@ class Validator_Original {
 				[ 'memory'=>0x3 ],
 				[ 'memory'=>0x3 ],
 				[ 'memory'=>0x2 ],
+                [ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ],
 				[ 'memory'=>0x2 ]
 			],

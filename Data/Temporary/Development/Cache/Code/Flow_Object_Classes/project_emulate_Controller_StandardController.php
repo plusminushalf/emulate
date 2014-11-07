@@ -19,20 +19,20 @@ class StandardController_Original extends ActionController {
 
 	/**
 	 * @Flow\Inject
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 */
 	protected $user;
 
 	/**
 	 * Bootstrap for Emulator.
-	 * @var project\emulate\Domain\Model\Emulate
+	 * @var \project\emulate\Domain\Model\Emulate
 	 * @Flow\Inject
 	 */
 	protected $emulate;
 
 	/**
 	 * account Repository
-	 * @var project\emulate\Domain\Repository\UserAccountRepository
+	 * @var \project\emulate\Domain\Repository\UserAccountRepository
 	 * @Flow\Inject
 	 */
 	protected $userAccountRepository;

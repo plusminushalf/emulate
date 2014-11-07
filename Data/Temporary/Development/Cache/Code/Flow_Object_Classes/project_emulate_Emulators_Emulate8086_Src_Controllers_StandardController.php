@@ -22,7 +22,7 @@ class StandardController_Original {
 
 	/**
 	 * user session
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 * @Flow\Inject
 	 */
 	protected $user;
@@ -211,23 +211,29 @@ class StandardController_Original {
 		$offset = dechex($data["offset"]);
 		do {
 			$result = $this->execute->executeOffset($offset);
-			if($result === -1) {
-				//clean or reset the m=code segment found a bug there
-				$segments = $this->memory->getSegments();
-				$segments->setCode([0x0000 => 0x000A, 0xffff => 0x0000]);
-				try {
-					$this->memory->setSegments($segments);
-					$this->memoryRepository->update($this->memory);
-				} catch(\TYPO3\Flow\Persistence\Exception\IllegalObjectTypeException $e) {
-					throw $e;
-				}
-				// return "Memory has been reseted because of fault in code segment";
-				return $this->execute->error;
-			}
-			$offset = hexdec($offset) + 1;
-			$offset = dechex($offset);
-			print_r($this->execute->error);
-			$i++;
+            if(!is_array($result)) {
+                if ($result === -1) {
+                    //clean or reset the m=code segment found a bug there
+                    $segments = $this->memory->getSegments();
+                    $segments->setCode([0x0000 => 0x000A, 0xffff => 0x0000]);
+                    try {
+                        $this->memory->setSegments($segments);
+                        $this->memoryRepository->update($this->memory);
+                    } catch (\TYPO3\Flow\Persistence\Exception\IllegalObjectTypeException $e) {
+                        throw $e;
+                    }
+                    // return "Memory has been reseted because of fault in code segment";
+                    return $this->execute->error;
+                }
+                $offset = hexdec($offset) + 1;
+                $offset = dechex($offset);
+                print_r($this->execute->error);
+                $i++;
+            } else {
+                $offset = $result["offset"];
+                $result = true;
+            }
+            if($result === false) echo "here";
 		} while($result === true && $i < 1000);
 		return 'true';
 	}

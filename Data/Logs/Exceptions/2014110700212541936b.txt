@@ -1,0 +1,45 @@
+Uncaught exception #1 in line 58 of /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Controllers_StandardController.php: Notice: Undefined index: register in /var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Controllers_StandardController.php line 58
+
+24 TYPO3\Flow\Error\ErrorHandler::handleError(8, "Undefined index: register", "/var/www/typo.flow/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Controllers_StandardController.php", 58, array|2|)
+23 project\emulate\Emulators\Emulate8086\Src\Controllers\StandardController_Original::setRegisterValueAction(array|1|)
+22 project\emulate\Emulators\Emulate8086\Src\Domain\Model\Commands\DEC_Original::reg8bitDec()
+21 project\emulate\Emulators\Emulate8086\Src\Domain\Model\Commands\DEC_Original::getFunctionToExecute()
+20 project\emulate\Emulators\Emulate8086\Src\Domain\Model\Commands\DEC_Original::execute("AL", NULL)
+19 project\emulate\Emulators\Emulate8086\Src\Domain\Model\Execute_Original::executeLine("DEC AL")
+18 project\emulate\Emulators\Emulate8086\Src\Domain\Model\Execute_Original::executeOffset("205")
+17 project\emulate\Emulators\Emulate8086\Src\Controllers\StandardController_Original::executeCodeAction(array|1|)
+16 project\emulate\Domain\Model\Emulate_Original::callEmulatorController("Emulate8086", "Standard", "executeCode", array|1|)
+15 project\emulate\Controller\StandardController_Original::emulatorControllerAction("emulate8086", "Standard", "executeCode", "{"offset":517}")
+14 call_user_func_array(array|2|, array|4|)
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /emulate/emulate8086/Standard/executeCode HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Content-Length: 29
+Accept: */*
+Origin: http://typo.flow
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://typo.flow/emulator
+Accept-Encoding: gzip,deflate
+Accept-Language: en-US,en;q=0.8
+
+data=%7B%22offset%22%3A517%7D
+
+HTTP RESPONSE:
+[response was empty]

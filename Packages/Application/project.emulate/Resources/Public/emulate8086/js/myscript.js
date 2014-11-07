@@ -48,9 +48,9 @@
 			var childInput = $(this).children('input');
 			if(that.validate(childInput.val())) {
 				parent.addClass('EditLine');
-				$(this).remove();
 				parent.html(childInput.val().toUpperCase());
-				commands_entered.addLine(parent.attr('data-offset'), childInput.val().toUpperCase(), this.memory);
+				commands_entered.addLine(parent.attr('data-offset'), childInput.val().toUpperCase(), that.memory);
+                $(this).remove();
 			} else {
 				$(this).children('div').html('Wrong command');
 			}
@@ -122,10 +122,10 @@
 				return 3;
 			}
 			op = '0x' + operand;
-			if(op > 0x00 && op < 0xff) {
+			if(op >= 0x00 && op <= 0xff) {
 				return 4;
 			}
-			if(op > 0xff && op < 0xffff) {
+			if(op > 0xff && op <= 0xffff) {
 				return 5;
 			}
 			if(operand.match(/\[/) && (operand.match(/\]/))) {
@@ -186,6 +186,8 @@
 			this.command = "E";
 			this.offset = undefined;
 			this.segment = '0x0000';
+            delete commands_entered;
+            commands_entered = new commandsEntered();
 		}
 	}
 
@@ -216,9 +218,11 @@
 						if(data == 'logout') {
 							location.reload();
 						}
-						$("#display").html(data);
-						// $(document).trigger($.Event('keydown', {which: 27}));
-						return true;
+                        console.log(data);
+                        if(data == 'true') {
+                            $(document).trigger($.Event('keydown', {which: 27}));
+                            return true;
+                        }
 					});
 				} else {
 					return false;
@@ -421,17 +425,7 @@
 			return true;
 		},
 		getCommand: function(command) {
-			switch(command) {
-				case 'E':
-					return this.E;
-					break;
-				case 'G':
-					return this.G;
-					break;
-				case 'S':
-					return this.S;
-					break;
-			}
+            return this[command];
 		}
 	}
 
@@ -510,10 +504,11 @@ var singleGenerateInstructionObject = function(stts) {
 var doubleGenerateInstructionObject = function(mem, stts) {
 	return {
 		operands: [
-			{ operand1:5, operand2: undefined }
+			{ operand1:5, operand2: undefined },
+            { operand1:4, operand2: undefined }
 		],
 		memory: [
-			{ memory:mem }
+			{ memory:mem }, { memory:mem }
 		],
 		status:stts
 	}
@@ -523,10 +518,11 @@ var instructorObject = function(stts) {
 	return {
 		operands: [
 			{ operand1:1,  operand2:undefined },
+            { operand1:2,  operand2:undefined },
 			{ operand1:6,  operand2:undefined }
 		],
 		memory: [
-			{ memory:0x1 }, { memory:0x1 }
+			{ memory:0x1 }, { memory:0x1 }, { memory:0x1 }
 		],
 		status:stts
 	}

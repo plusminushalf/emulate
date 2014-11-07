@@ -18,7 +18,7 @@ class AAM_Original implements CommandInterface {
 
 	/**
 	 * user session
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 * @Flow\Inject
 	 */
 	protected $user;
@@ -54,7 +54,7 @@ class AAM_Original implements CommandInterface {
 	 * executes the command with given parameters.
 	 * @param  string $operand1
 	 * @param  string $operand2
-	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
+     * @return boolean|int|array true if executed successfully, false on software interept, -1 if problem occurs arrar for jump
 	 */
 	public function execute($operand1, $operand2) {
 		$flags = $this->memory->getFlags();

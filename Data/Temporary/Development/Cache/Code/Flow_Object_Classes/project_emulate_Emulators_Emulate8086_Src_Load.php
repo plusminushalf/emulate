@@ -18,49 +18,49 @@ class Load_Original implements LoadInterface {
 
 	/**
 	 * memory
-	 * @var project\emulate\Emulators\Emulate8086\Src\Domain\Model\Memory
+	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Memory
 	 * @Flow\Inject
 	 */
 	protected $memory;
 
 	/**
 	 * Flags
-	 * @var project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
+	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
 	 * @Flow\Inject
 	 */
 	protected $flags;
 
 	/**
 	 * Registers
-	 * @var project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers
+	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers
 	 * @Flow\Inject
 	 */
 	protected $registers;
 
 	/**
 	 * Segments
-	 * @var project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments
+	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments
 	 * @Flow\Inject
 	 */
 	protected $segments;
 
 	/**
 	 * memory repository
-	 * @var project\emulate\Emulators\Emulate8086\Src\Domain\Repository\MemoryRepository
+	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Repository\MemoryRepository
 	 * @Flow\Inject
 	 */
 	protected $memoryRepository;
 
 	/**
 	 * user session
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 * @Flow\Inject
 	 */
 	protected $user;
 
 	/**
 	 * persitance manager
-	 * @var TYPO3\Flow\Persistence\PersistenceManagerInterface
+	 * @var \TYPO3\Flow\Persistence\PersistenceManagerInterface
 	 * @Flow\Inject
 	 */
 	protected $persistenceManager;

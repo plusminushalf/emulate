@@ -46,14 +46,14 @@ class User {
 	protected $property = [];
 
 	/**
-	 * @return project\emulate\Domain\Model\UserAccount
+	 * @return \project\emulate\Domain\Model\UserAccount
 	 */
 	public function getUserAccount() {
 		return $this->userAccount;
 	}
 
 	/**
-	 * @param project\emulate\Domain\Model\UserAccount $userAccount
+	 * @param \project\emulate\Domain\Model\UserAccount $userAccount
 	 * @return void
 	 */
 	public function setUserAccount($userAccount) {
