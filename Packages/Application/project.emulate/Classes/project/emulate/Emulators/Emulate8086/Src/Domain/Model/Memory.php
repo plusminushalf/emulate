@@ -40,7 +40,7 @@ class Memory {
 
 	/**
 	 * sets the flags
-	 * @param project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags $flags
+	 * @param \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags $flags
 	 */
 	public function setFlags($flags) {
 		$this->flags = $flags;
@@ -48,7 +48,7 @@ class Memory {
 
 	/**
 	 * returns the flags
-	 * @return project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
+	 * @return \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
 	 */
 	public function getFlags() {
 		return $this->flags;
@@ -72,7 +72,7 @@ class Memory {
 
 	/**
 	 * sets the registers
-	 * @param project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers $registers
+	 * @param \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers $registers
 	 */
 	public function setRegisters($registers) {
 		$this->registers = $registers;
@@ -80,7 +80,7 @@ class Memory {
 
 	/**
 	 * returns the registers
-	 * @return project\emulate\Emulators\Emulate8086\Src\Domain\Model\registers
+	 * @return \project\emulate\Emulators\Emulate8086\Src\Domain\Model\registers
 	 */
 	public function getRegisters() {
 		return $this->registers;
@@ -88,7 +88,7 @@ class Memory {
 
 	/**
 	 * sets the segments
-	 * @param project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments $segments
+	 * @param \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments $segments
 	 */
 	public function setSegments($segments) {
 		$this->segments = $segments;
@@ -96,7 +96,7 @@ class Memory {
 
 	/**
 	 * returns the segments
-	 * @return project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments
+	 * @return \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments
 	 */
 	public function getSegments() {
 		return $this->segments;

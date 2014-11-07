@@ -1,0 +1,52 @@
+Uncaught exception #1: Warning: unlink(/var/www/typo.flow/Data/Temporary/Development/Cache/Data/Flow_Session_MetaData/N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP): No such file or directory in /var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Cache/Backend/FileBackend.php line 240
+
+34 TYPO3\Flow\Error\ErrorHandler::handleError(2, "unlink(/var/www/typo.flow/Data/Temporary/Development/Cache/Data/Flow_Session_MetaData/N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP): No such file or directory", "/var/www/typo.flow/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Cache/Backend/FileBackend.php", 240, array|2|)
+33 unlink("/var/www/typo.flow/Data/Temporary/Development/Cache/Data/Flow_Session_MetaData/N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP")
+32 TYPO3\Flow\Cache\Backend\FileBackend::remove("N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP")
+31 TYPO3\Flow\Cache\Frontend\AbstractFrontend::remove("N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP")
+30 TYPO3\Flow\Session\Session_Original::removeSessionMetaDataCacheEntry("N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP")
+29 TYPO3\Flow\Session\Session_Original::destroy("Session N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP was inactive for 12989 seconds, more than the configured timeout of 3600 seconds.")
+28 TYPO3\Flow\Session\Session::destroy("Session N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP was inactive for 12989 seconds, more than the configured timeout of 3600 seconds.")
+27 call_user_func_array(array|2|, array|1|)
+26 TYPO3\Flow\Session\Session::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+25 TYPO3\Flow\Session\Session::destroy("Session N3TrXNjxV01waGS3tDxRVaUOsOe0CcHP was inactive for 12989 seconds, more than the configured timeout of 3600 seconds.")
+24 TYPO3\Flow\Session\Session_Original::autoExpire()
+23 TYPO3\Flow\Session\Session_Original::canBeResumed()
+22 TYPO3\Flow\Session\Session_Original::resume()
+21 TYPO3\Flow\Session\Session::resume()
+20 call_user_func_array(array|2|, array|0|)
+19 TYPO3\Flow\Session\Session::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+18 TYPO3\Flow\Session\Session::resume()
+17 TYPO3\Flow\Core\Booting\Scripts::initializeSession(TYPO3\Flow\Core\Bootstrap)
+16 call_user_func(array|2|, TYPO3\Flow\Core\Bootstrap)
+15 TYPO3\Flow\Core\Booting\Step::__invoke(TYPO3\Flow\Core\Bootstrap)
+14 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+13 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+12 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+11 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+10 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+9 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+8 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+7 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+6 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+5 TYPO3\Flow\Core\Booting\Sequence::invokeStep(TYPO3\Flow\Core\Booting\Step, TYPO3\Flow\Core\Bootstrap)
+4 TYPO3\Flow\Core\Booting\Sequence::invoke(TYPO3\Flow\Core\Bootstrap)
+3 TYPO3\Flow\Http\RequestHandler::boot()
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /emulator HTTP/1.1
+Host: typo.flow
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36
+Referer: http://typo.flow/index
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

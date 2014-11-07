@@ -26,7 +26,7 @@ class MOV_Original implements CommandInterface {
 
 	/**
 	 * user session
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 * @Flow\Inject
 	 */
 	protected $user;
@@ -66,7 +66,7 @@ class MOV_Original implements CommandInterface {
 	 * executes the command with given parameters.
 	 * @param  string $operand1
 	 * @param  string $operand2
-	 * @return boolean true if executed successfully, false on software interept, -1 if problem occurs
+     * @return boolean|int|array true if executed successfully, false on software interept, -1 if problem occurs arrar for jump
 	 */
 	public function execute($operand1, $operand2) {
 		$this->operand1 = $operand1;
@@ -168,18 +168,18 @@ class MOV_Original implements CommandInterface {
 		if($type == 1) {
 			$value = json_decode($this->controller->getRegisterValueAction(["register"=> $operand2]), true)['value'];
 			$valueLSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $value]), true)['value'];
-			$value = dechex($value);
-			$value = hexdec(++$value);
+			$value = hexdec($value);
+			$value = dechex(++$value);
 			$valueMSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $value]), true)['value'];
-			$value = $valueMSB['value'] . $valueLSB['value'];
+			$value = $valueMSB . $valueLSB;
 			$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> hexdec($value)]);
 			return true;
 		} elseif($type == 4 || $type == 5) {
 			$valueLSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand2]), true)['value'];
-			$operand2 = dechex($operand2);
-			$operand2 = hexdec(++$operand2);
+			$operand2 = hexdec($operand2);
+			$operand2 = dechex(++$operand2);
 			$valueMSB = json_decode($this->controller->getMemoryValueAction(["segment"=> 0x1000, "offset"=> $operand2]), true)['value'];
-			$value = $valueMSB['value'] . $valueLSB['value'];
+			$value = $valueMSB . $valueLSB;
 			$this->controller->setRegisterValueAction([ "register"=> $operand1, "value"=> hexdec($value)]);
 			return true;
 		}

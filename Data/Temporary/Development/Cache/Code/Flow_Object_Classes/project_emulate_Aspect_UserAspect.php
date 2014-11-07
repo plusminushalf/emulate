@@ -12,7 +12,7 @@ class UserAspect_Original {
 
 	/**
 	 * security context
-	 * @var TYPO3\Flow\Security\Context
+	 * @var \TYPO3\Flow\Security\Context
 	 * @Flow\Inject
 	 */
 	protected $securityContext;

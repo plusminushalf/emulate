@@ -1,0 +1,1882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="554466ee-c4c7-418b-9f1f-84e0fd290832" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ADD.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ANDE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CALL.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CLD.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CMC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CMP.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DAA.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DAS.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DEC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DIV.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/INC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JA.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JAE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JB.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JBE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JCXZ.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JMP.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNA.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNAE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNB.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNBE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNC.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNE.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNO.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNS.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNZ.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/STC.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Fluid_TemplateCache/project_emulate_Standard_action_emulator_16d8144f459114882ecdad4e595ace746383ac4e.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Fluid_TemplateCache/project_emulate_Standard_action_home_e21ea9fee0e4d4e694c1a0c24f8d993b4ac2f621.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Fluid_TemplateCache/project_emulate_Standard_action_index_ca765e10d34c8004f542f1bc5805d41d511783f7.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Fluid_TemplateCache/project_emulate_Standard_layout_Default_316e2e8b46f8a4cb12fb7b7881ecf713135a7aeb.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Fluid_TemplateCache/project_emulate_Standard_layout_Page_35434e8a147bee89e84af4f989913b987959eb43.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Fluid_TemplateCache/project_emulate_Standard_partial_Emulate8086_bbc745f780ad3868d8b92be3ea027e291e96586f.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_FindMatchResults/19e116f8a6a34b5de202848b33da6c38" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_FindMatchResults/37d9c90fc538d4bf9e575234ab53855d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_FindMatchResults/605992d923edb9258ce732003c2533b1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_FindMatchResults/7c19c993c4327eb195cfa96ee8a77396" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Mvc_Routing_Resolve/6f80fbc14df823b67960b19aee7b256a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Mvc_ViewConfigurations/50459828e30b810a8bc41a6a26cd7cbd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Mvc_ViewConfigurations/e5deb2015c38697d8d41a2a85e4bf0ae" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Persistence_Doctrine/3642473fe8635ebe0ee78a8fd3b5b9aa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Persistence_Doctrine/a9e818535660ee14cc6fb7905993873b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Persistence_Doctrine/b88c29f1aa5ecd97c64fa356450e65fe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Persistence_Doctrine/c4f8b4cf2992aa5fb6949cbc887723a3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Security_Policy/rolesFromPolicyUpToDate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Session_MetaData/Bh5rvWLfexNab2gPR6yfJVyiY9OT1Red" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Session_MetaData/vkfD8peiS7bCJ29rOHdTs4JA9pwcnaHG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Session_Storage/a4501954-d16f-7117-f02c-d40ce36733c6573091c8c4abc13135b03c6da4f6c05a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Session_Storage/a4501954-d16f-7117-f02c-d40ce36733c6792627a41a37af59939a77b821e4238c" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blog" afterPath="$PROJECT_DIR$/blog" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141022234331d6b316.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141022234331d6b316.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410222343320f391e.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410222343320f391e.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141030225556af7cfb.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141030225556af7cfb.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410302256117e8d59.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410302256117e8d59.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103022561196458c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103022561196458c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141030225627ab9169.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141030225627ab9169.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141030225743e498b1.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141030225743e498b1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310008368d5ab4.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310008368d5ab4.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100085957329c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100085957329c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100092427285e.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100092427285e.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310054176fd399.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310054176fd399.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100543965bb24.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100543965bb24.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100544051e608.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100544051e608.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005446f1cfee.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005446f1cfee.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005754dc84f7.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005754dc84f7.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100581845ee33.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103100581845ee33.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005830523adb.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005830523adb.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005851e334aa.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005851e334aa.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005902187270.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031005902187270.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044731b734.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044731b734.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010447d43d79.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010447d43d79.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044805b732.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044805b732.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448310701.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448310701.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448363122.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448363122.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104484181f3.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104484181f3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448433f7c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448433f7c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044854079e.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044854079e.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104486c7698.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104486c7698.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044872dda5.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044872dda5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104488fedf0.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104488fedf0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104489d14e0.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104489d14e0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448bb430a.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010448bb430a.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449108f7f.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449108f7f.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044914a7d5.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044914a7d5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449304536.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449304536.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449371d8a.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449371d8a.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104493a19a7.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104493a19a7.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044954c1cd.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101044954c1cd.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449567c7c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449567c7c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104499aacbc.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104499aacbc.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449b860eb.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449b860eb.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449c12919.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449c12919.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449e1f7af.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449e1f7af.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449e7ac60.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010449e7ac60.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450309a6c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450309a6c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450517f2e.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450517f2e.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450597bf2.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450597bf2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104506d3d26.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104506d3d26.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104507c9c5d.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104507c9c5d.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045083804b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045083804b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045084a9ba.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045084a9ba.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450943551.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450943551.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450a617f5.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450a617f5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450b603ef.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450b603ef.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450ec7334.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010450ec7334.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104510dff5a.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104510dff5a.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104510ffe01.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104510ffe01.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104511e99d5.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104511e99d5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045153a2d7.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045153a2d7.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045184ae8d.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045184ae8d.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045198ab1f.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045198ab1f.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451a17e1d.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451a17e1d.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451cee88e.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451cee88e.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451dad5c5.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451dad5c5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451de8f3c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451de8f3c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451df6d55.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010451df6d55.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452169c31.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452169c31.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104527cfeee.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104527cfeee.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452aa9ed6.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452aa9ed6.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452c38b64.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452c38b64.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452c87933.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452c87933.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452e4680a.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010452e4680a.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045600e114.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045600e114.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045637c170.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045637c170.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104567c796b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104567c796b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045698700c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045698700c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010456c2b263.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010456c2b263.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104573bb90e.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104573bb90e.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104576412c6.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104576412c6.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045790391b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045790391b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104579736aa.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104579736aa.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104579d6ebf.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104579d6ebf.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457a72f8c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457a72f8c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457a7562e.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457a7562e.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457aa3de1.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457aa3de1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457c4a29f.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457c4a29f.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457c57ae7.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457c57ae7.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457d54961.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457d54961.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457dfd3cc.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010457dfd3cc.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458105f73.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458105f73.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104583867e9.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104583867e9.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045840a672.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045840a672.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045877b4ae.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045877b4ae.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104588e1691.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104588e1691.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045895d279.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045895d279.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045899bd5b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045899bd5b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104589b1c54.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104589b1c54.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458a876af.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458a876af.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458c7feff.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458c7feff.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458e8ccfc.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010458e8ccfc.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045905be69.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045905be69.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104591d477d.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104591d477d.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045943cac3.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101045943cac3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459441597.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459441597.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104597c624b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104597c624b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104597e0c2b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310104597e0c2b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459939b51.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459939b51.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459ac2db5.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459ac2db5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459bbb731.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459bbb731.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459d6b072.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459d6b072.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459e82136.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010459e82136.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050018739b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050018739b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050022aebb.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050022aebb.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010500241820.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010500241820.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105002d4311.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105002d4311.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105002fdc27.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105002fdc27.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105003366f8.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105003366f8.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050051a988.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050051a988.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050054a644.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050054a644.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105006f8a33.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105006f8a33.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050077eed4.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050077eed4.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105009b990b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310105009b990b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010500dc927c.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010500dc927c.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050141742a.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101050141742a.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010501a855c7.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010501a855c7.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101051952f989.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101051952f989.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010525ce0ffb.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031010525ce0ffb.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310112103e93cf.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410310112103e93cf.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101121047b87f.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103101121047b87f.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031011210bd5053.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031011210bd5053.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031122207054fb2.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031122207054fb2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103112222121fa47.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103112222121fa47.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031122242f04309.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031122242f04309.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031124536c4d911.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031124536c4d911.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103112454859af19.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/2014103112454859af19.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031124548e405a0.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031124548e405a0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311245526ea1ed.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311245526ea1ed.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031131538602018.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031131538602018.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311315486aae52.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311315486aae52.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311315563bbc99.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311315563bbc99.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311316259a3108.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311316259a3108.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311318171cd49b.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/201410311318171cd49b.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031131904487ed5.txt" afterPath="$PROJECT_DIR$/Data/Logs/Exceptions/20141031131904487ed5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAA.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAA.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAD.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAM.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAM.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAS.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAS.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ADC.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ADC.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/AvailableProxyClasses.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/AvailableProxyClasses.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/CommandInterface.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/CommandInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Domain/Model/Emulate.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Domain/Model/Emulate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Execute.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Execute.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Flow_ClassFiles_directoriesAndFiles" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Flow_ClassFiles_directoriesAndFiles" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Flow_ClassFiles_filesAndModificationTimes" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Flow_ClassFiles_filesAndModificationTimes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Flow_ConfigurationFiles_filesAndModificationTimes" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Flow_ConfigurationFiles_filesAndModificationTimes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Fluid_TemplateFiles_filesAndModificationTimes" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Monitor/Fluid_TemplateFiles_filesAndModificationTimes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/HLT.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/HLT.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Templates/Standard/Index.html" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Templates/Standard/Index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Load.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Load.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/MOV.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/MOV.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Memory.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Memory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Layouts/Page.html" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Layouts/Page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Reflection_CompiletimeData/ReflectionData" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Reflection_CompiletimeData/ReflectionData" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/Security_Development.log" afterPath="$PROJECT_DIR$/Data/Logs/Security_Development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Controller/StandardController.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Controller/StandardController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Controllers/StandardController.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Controllers/StandardController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Logs/System_Development.log" afterPath="$PROJECT_DIR$/Data/Logs/System_Development.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Domain/Model/User.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Domain/Model/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Aspect/UserAspect.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Aspect/UserAspect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Validator.php" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Validator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Public/emulate8086/js/myscript.js" afterPath="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Public/emulate8086/js/myscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Object_Configuration/objects" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Data/Flow_Object_Configuration/objects" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Aspect_UserAspect.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Aspect_UserAspect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Controller_StandardController.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Controller_StandardController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Domain_Model_Emulate.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Domain_Model_Emulate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Domain_Model_User.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Domain_Model_User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Controllers_StandardController.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Controllers_StandardController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAA.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAA.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAD.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAD.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAM.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAM.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAS.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_AAS.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_ADC.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_ADC.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_HLT.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_HLT.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_MOV.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Commands_MOV.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Execute.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Execute.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Memory.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Memory.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Validator.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Domain_Model_Validator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Load.php" afterPath="$PROJECT_DIR$/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Emulators_Emulate8086_Src_Load.php" />
+    </list>
+    <ignored path="typo.flow.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="typo.flow" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="DIV.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DIV.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.0" vertical-offset="1350" max-vertical-offset="4965">
+              <caret line="121" column="113" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="113" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JBE.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JBE.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.083333" vertical-offset="316" max-vertical-offset="990">
+              <caret line="47" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="2" />
+              <folding>
+                <element signature="e#165#200#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JNZ.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNZ.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.708334" vertical-offset="421" max-vertical-offset="1065">
+              <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+              <folding>
+                <element signature="e#6#87#0#PHP" expanded="true" />
+                <element signature="e#165#200#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StandardController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Controllers/StandardController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.78084415" vertical-offset="3044" max-vertical-offset="3720">
+              <caret line="235" column="46" selection-start-line="235" selection-start-column="46" selection-end-line="235" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="true" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Controller/StandardController.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Templates/Standard/Index.html" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Layouts/Page.html" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Domain/Model/User.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Domain/Model/Emulate.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/_AND.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/_AND_.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AND_.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Validator.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/CommandInterface.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAA.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAD.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAM.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAS.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ADC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ADD.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ANDE.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CALL.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CLC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CLD.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CMC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CMP.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DAA.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DAS.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DIV.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/HLT.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/INC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/MOV.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/STC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JA.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JAE.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JB.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JBE.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JE.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Public/emulate8086/js/myscript.js" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JCXZ.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JMP.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNA.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNAE.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNB.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNBE.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNE.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNO.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNS.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DEC.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Execute.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNZ.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Controllers/StandardController.php" />
+        <option value="$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Load.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-2" />
+    <option name="y" value="-3" />
+    <option name="width" value="1370" />
+    <option name="height" value="775" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>UndefinedPHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PhpUndefinedNamespaceInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPO3.Fluid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPO3.Fluid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPO3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fluid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPO3.Fluid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPO3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fluid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPO3.Fluid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TYPO3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fluid" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Compiler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate8086" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Private" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Private" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Private" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Private" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Configuration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulate8086" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulate8086" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulate8086" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulate8086" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Commands" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulate8086" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulate8086" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Emulators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typo.flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project.emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emulate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel.project" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-env-vars>false</pass-parent-env-vars>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="554466ee-c4c7-418b-9f1f-84e0fd290832" name="Default" comment="" />
+      <created>1414760047792</created>
+      <option name="number" value="Default" />
+      <updated>1414760047792</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-2" y="-3" width="1370" height="775" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15885799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="9" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Configuration/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.18629174" vertical-offset="106" max-vertical-offset="1665">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Templates/Standard/Home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.61870503" vertical-offset="344" max-vertical-offset="2385">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Templates/Standard/Emulator.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.375" vertical-offset="180" max-vertical-offset="1215">
+          <caret line="35" column="106" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Configuration/Routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="26" column="49" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Framework/TYPO3.Fluid/Classes/TYPO3/Fluid/Core/Compiler/AbstractCompiledTemplate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3462214" vertical-offset="766" max-vertical-offset="1335">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Private/Partials/Emulate8086.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8804921" vertical-offset="24" max-vertical-offset="615">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Controller/StandardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.5588753" vertical-offset="0" max-vertical-offset="2310">
+          <caret line="136" column="31" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Domain/Model/Emulate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48392284" vertical-offset="524" max-vertical-offset="2325">
+          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-135.08333" vertical-offset="1258" max-vertical-offset="19185">
+          <caret line="301" column="51" selection-start-line="301" selection-start-column="51" selection-end-line="301" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56120825" vertical-offset="472" max-vertical-offset="1590">
+          <caret line="57" column="127" selection-start-line="57" selection-start-column="127" selection-end-line="57" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/CommandInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="405">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0" vertical-offset="450" max-vertical-offset="1320">
+          <caret line="56" column="127" selection-start-line="56" selection-start-column="127" selection-end-line="56" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAM.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.541666" vertical-offset="389" max-vertical-offset="1305">
+          <caret line="56" column="127" selection-start-line="56" selection-start-column="127" selection-end-line="56" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/AAS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.291667" vertical-offset="443" max-vertical-offset="1560">
+          <caret line="56" column="127" selection-start-line="56" selection-start-column="127" selection-end-line="56" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ADC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.291667" vertical-offset="1103" max-vertical-offset="9060">
+          <caret line="92" column="127" selection-start-line="92" selection-start-column="127" selection-end-line="92" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ANDE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75" vertical-offset="450" max-vertical-offset="8595">
+          <caret line="67" column="127" selection-start-line="67" selection-start-column="127" selection-end-line="67" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CALL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="360">
+          <caret line="21" column="127" selection-start-line="21" selection-start-column="127" selection-end-line="21" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CLC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.25" vertical-offset="300" max-vertical-offset="975">
+          <caret line="54" column="127" selection-start-line="54" selection-start-column="127" selection-end-line="54" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CLD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.333333" vertical-offset="346" max-vertical-offset="975">
+          <caret line="53" column="127" selection-start-line="53" selection-start-column="127" selection-end-line="53" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CMC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.333333" vertical-offset="322" max-vertical-offset="975">
+          <caret line="53" column="127" selection-start-line="53" selection-start-column="127" selection-end-line="53" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DAA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75" vertical-offset="900" max-vertical-offset="1530">
+          <caret line="81" column="127" selection-start-line="81" selection-start-column="127" selection-end-line="81" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DAS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.75" vertical-offset="900" max-vertical-offset="1530">
+          <caret line="81" column="127" selection-start-line="81" selection-start-column="127" selection-end-line="81" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/STC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5707472" vertical-offset="331" max-vertical-offset="960">
+          <caret line="53" column="127" selection-start-line="53" selection-start-column="127" selection-end-line="53" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/MOV.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21462639" vertical-offset="855" max-vertical-offset="8145">
+          <caret line="68" column="127" selection-start-line="68" selection-start-column="127" selection-end-line="68" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JAE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="975">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="76" />
+          <folding>
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.708334" vertical-offset="361" max-vertical-offset="990">
+          <caret line="59" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="2" />
+          <folding>
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.333334" vertical-offset="421" max-vertical-offset="1050">
+          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2607313" vertical-offset="346" max-vertical-offset="975">
+          <caret line="39" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="1" />
+          <folding>
+            <element signature="e#165#200#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/INC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4165342" vertical-offset="923" max-vertical-offset="3615">
+          <caret line="84" column="127" selection-start-line="84" selection-start-column="127" selection-end-line="84" selection-end-column="127" />
+          <folding>
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/HLT.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47694755" vertical-offset="0" max-vertical-offset="629">
+          <caret line="22" column="127" selection-start-line="22" selection-start-column="127" selection-end-line="22" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DIV.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0" vertical-offset="1350" max-vertical-offset="4965">
+          <caret line="121" column="113" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.708334" vertical-offset="436" max-vertical-offset="1065">
+          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/CMP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="40.916668" vertical-offset="2227" max-vertical-offset="9060">
+          <caret line="90" column="127" selection-start-line="90" selection-start-column="127" selection-end-line="90" selection-end-column="127" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JMP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="495">
+          <caret line="26" column="118" selection-start-line="26" selection-start-column="118" selection-end-line="26" selection-end-column="118" />
+          <folding>
+            <element signature="e#166#201#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JCXZ.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.833333" vertical-offset="16" max-vertical-offset="645">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7138315" vertical-offset="421" max-vertical-offset="1050">
+          <caret line="58" column="19" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNAE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.618442" vertical-offset="421" max-vertical-offset="1050">
+          <caret line="54" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNBE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7376788" vertical-offset="436" max-vertical-offset="1065">
+          <caret line="60" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/ADD.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3338633" vertical-offset="2250" max-vertical-offset="9270">
+          <caret line="166" column="8" selection-start-line="166" selection-start-column="8" selection-end-line="178" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23688394" vertical-offset="421" max-vertical-offset="1050">
+          <caret line="38" column="23" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23688394" vertical-offset="421" max-vertical-offset="1050">
+          <caret line="38" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="64" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="false" />
+            <element signature="e#165#200#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/DEC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.875" vertical-offset="885" max-vertical-offset="4020">
+          <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Resources/Public/emulate8086/js/myscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2669903" vertical-offset="585" max-vertical-offset="12840">
+          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45151034" vertical-offset="436" max-vertical-offset="1065">
+          <caret line="48" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#165#200#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7138315" vertical-offset="436" max-vertical-offset="1065">
+          <caret line="59" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#165#200#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Execute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37042925" vertical-offset="1342" max-vertical-offset="2010">
+          <caret line="108" column="40" selection-start-line="108" selection-start-column="40" selection-end-line="108" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45151034" vertical-offset="436" max-vertical-offset="1065">
+          <caret line="48" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="2" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#165#200#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JBE.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.083333" vertical-offset="316" max-vertical-offset="990">
+          <caret line="47" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="2" />
+          <folding>
+            <element signature="e#165#200#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Domain/Model/Commands/JNZ.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.708334" vertical-offset="421" max-vertical-offset="1065">
+          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+            <element signature="e#165#200#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Load.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20349762" vertical-offset="982" max-vertical-offset="1635">
+          <caret line="75" column="64" selection-start-line="75" selection-start-column="64" selection-end-line="75" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Packages/Application/project.emulate/Classes/project/emulate/Emulators/Emulate8086/Src/Controllers/StandardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78084415" vertical-offset="3044" max-vertical-offset="3720">
+          <caret line="235" column="46" selection-start-line="235" selection-start-column="46" selection-end-line="235" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

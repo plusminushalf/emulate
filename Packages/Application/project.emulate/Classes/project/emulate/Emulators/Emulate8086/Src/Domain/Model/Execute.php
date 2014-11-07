@@ -25,7 +25,7 @@ class Execute implements ExecuteInterface {
 
 	/**
 	 * user session
-	 * @var project\emulate\Domain\Model\User
+	 * @var \project\emulate\Domain\Model\User
 	 * @Flow\Inject
 	 */
 	protected $user;
@@ -62,7 +62,7 @@ class Execute implements ExecuteInterface {
 
 	/**
 	 * [$objectManager description]
-	 * @var TYPO3\Flow\Object\ObjectManager
+	 * @var \TYPO3\Flow\Object\ObjectManager
 	 * @Flow\Inject
 	 */
 	protected $objectManager;
@@ -117,6 +117,7 @@ class Execute implements ExecuteInterface {
 		if(!array_key_exists(1, $operands)) {
     		$operands[1] = null;
 		}
+        if($this->instruction == "AND") $this->instruction = "ANDE";
 		$command = $this->objectManager->get('project\emulate\Emulators\Emulate8086\Src\Domain\Model\Commands\\' . $this->instruction);
 		if($command instanceof CommandInterface) {
 			$this->error = $command->error;
