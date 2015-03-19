@@ -24,27 +24,6 @@ class Load implements LoadInterface {
 	protected $memory;
 
 	/**
-	 * Flags
-	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
-	 * @Flow\Inject
-	 */
-	protected $flags;
-
-	/**
-	 * Registers
-	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers
-	 * @Flow\Inject
-	 */
-	protected $registers;
-
-	/**
-	 * Segments
-	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments
-	 * @Flow\Inject
-	 */
-	protected $segments;
-
-	/**
 	 * memory repository
 	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Repository\MemoryRepository
 	 * @Flow\Inject
@@ -72,16 +51,10 @@ class Load implements LoadInterface {
 	public function boot() {
 		try {
 			$this->persistenceManager->whitelistObject($this->memory);
-			$this->persistenceManager->whitelistObject($this->flags);
-			$this->persistenceManager->whitelistObject($this->registers);
-			$this->persistenceManager->whitelistObject($this->segments);
 			$this->persistenceManager->whitelistObject($this->memoryRepository);
 			$result = $this->memoryRepository->getMemory($this->user->getUserAccount()->getUsername());
 			if($result->count() == 0) {
 				$this->memory->setUsername($this->user->getUserAccount()->getUsername());
-				$this->memory->setFlags($this->flags);
-				$this->memory->setRegisters($this->registers);
-				$this->memory->setSegments($this->segments);
 				$this->memoryRepository->add($this->memory);
 			}
 			$this->readyState = TRUE;

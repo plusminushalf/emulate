@@ -27,6 +27,6 @@
   uriPattern: 'emulate/{emulator}/{controller}/{action}}'
   defaults:
     '@package': 'project.emulate'
-    '@controller': 'standard'
+    '@controller': 'emulator'
     '@action': 'emulatorController'
-  httpMethods: ['POST']
+#  httpMethods: ['POST']

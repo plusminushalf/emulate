@@ -52,6 +52,7 @@ class UserAccount_Original {
 	/**
 	 * emulatr to load
 	 * @var string
+	 * @ORM\Column(nullable=true)
 	 */
 	protected $emulatorPreference = NULL;
 

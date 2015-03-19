@@ -24,27 +24,6 @@ class Load_Original implements LoadInterface {
 	protected $memory;
 
 	/**
-	 * Flags
-	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
-	 * @Flow\Inject
-	 */
-	protected $flags;
-
-	/**
-	 * Registers
-	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers
-	 * @Flow\Inject
-	 */
-	protected $registers;
-
-	/**
-	 * Segments
-	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments
-	 * @Flow\Inject
-	 */
-	protected $segments;
-
-	/**
 	 * memory repository
 	 * @var \project\emulate\Emulators\Emulate8086\Src\Domain\Repository\MemoryRepository
 	 * @Flow\Inject
@@ -72,16 +51,10 @@ class Load_Original implements LoadInterface {
 	public function boot() {
 		try {
 			$this->persistenceManager->whitelistObject($this->memory);
-			$this->persistenceManager->whitelistObject($this->flags);
-			$this->persistenceManager->whitelistObject($this->registers);
-			$this->persistenceManager->whitelistObject($this->segments);
 			$this->persistenceManager->whitelistObject($this->memoryRepository);
 			$result = $this->memoryRepository->getMemory($this->user->getUserAccount()->getUsername());
 			if($result->count() == 0) {
 				$this->memory->setUsername($this->user->getUserAccount()->getUsername());
-				$this->memory->setFlags($this->flags);
-				$this->memory->setRegisters($this->registers);
-				$this->memory->setSegments($this->segments);
 				$this->memoryRepository->add($this->memory);
 			}
 			$this->readyState = TRUE;
@@ -237,9 +210,6 @@ class Load extends Load_Original implements \TYPO3\Flow\Object\Proxy\ProxyInterf
 	 */
 	 private function Flow_Proxy_injectProperties() {
 		$this->memory = new \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Memory();
-		$this->flags = new \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags();
-		$this->registers = new \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers();
-		$this->segments = new \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments();
 		$memoryRepository_reference = &$this->memoryRepository;
 		$this->memoryRepository = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager->getInstance('project\emulate\Emulators\Emulate8086\Src\Domain\Repository\MemoryRepository');
 		if ($this->memoryRepository === NULL) {
@@ -266,12 +236,9 @@ class Load extends Load_Original implements \TYPO3\Flow\Object\Proxy\ProxyInterf
 		}
 $this->Flow_Injected_Properties = array (
   0 => 'memory',
-  1 => 'flags',
-  2 => 'registers',
-  3 => 'segments',
-  4 => 'memoryRepository',
-  5 => 'user',
-  6 => 'persistenceManager',
+  1 => 'memoryRepository',
+  2 => 'user',
+  3 => 'persistenceManager',
 );
 	}
 }

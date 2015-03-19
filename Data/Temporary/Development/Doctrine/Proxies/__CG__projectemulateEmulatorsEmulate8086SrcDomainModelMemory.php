@@ -78,16 +78,16 @@ class Memory extends \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Mem
         return parent::getFlags();
     }
 
-    public function setusername($username)
+    public function setUsername($username)
     {
         $this->__load();
-        return parent::setusername($username);
+        return parent::setUsername($username);
     }
 
-    public function getusername()
+    public function getUsername()
     {
         $this->__load();
-        return parent::getusername();
+        return parent::getUsername();
     }
 
     public function setRegisters($registers)

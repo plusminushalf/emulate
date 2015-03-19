@@ -14,7 +14,7 @@ TYPO3:
       backendOptions:
         dbname: 'emulate'       # adjust to your database name
         user: 'root'             # adjust to your database user
-        password: 'ilpcgarvit'         # adjust to your database password
+        password: 'garvit'         # adjust to your database password
 
        # if you want to log executed SQL queries, enable the next 2 lines
 #      doctrine:

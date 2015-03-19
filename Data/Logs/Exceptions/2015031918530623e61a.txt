@@ -1,0 +1,39 @@
+Uncaught exception #1 in line 165 of /home/garvitdelhi/dev/php/www/emulate/Data/Temporary/Development/Doctrine/Proxies/__CG__projectemulateEmulatorsEmulate8086SrcDomainModelRegisters.php: Warning: Missing argument 1 for TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers::getRegister(), called in /home/garvitdelhi/dev/php/www/emulate/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Reflection/ObjectAccess.php on line 149 and defined in /home/garvitdelhi/dev/php/www/emulate/Data/Temporary/Development/Doctrine/Proxies/__CG__projectemulateEmulatorsEmulate8086SrcDomainModelRegisters.php line 165
+
+22 TYPO3\Flow\Error\ErrorHandler::handleError(2, "Missing argument 1 for TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers::getRegister(), called in /home/garvitdelhi/dev/php/www/emulate/Packages/Framework/TYPO3.Flow/Classes/TYPO3/Flow/Reflection/ObjectAccess.php on line 149 and defined", "/home/garvitdelhi/dev/php/www/emulate/Data/Temporary/Development/Doctrine/Proxies/__CG__projectemulateEmulatorsEmulate8086SrcDomainModelRegisters.php", 165, array|0|)
+21 TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers::getRegister()
+20 TYPO3\Flow\Reflection\ObjectAccess::getPropertyInternal(TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers, "register", FALSE, TRUE)
+19 TYPO3\Flow\Reflection\ObjectAccess::getProperty(TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers, "register")
+18 TYPO3\Flow\Mvc\View\JsonView_Original::transformObject(TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers, array|0|)
+17 TYPO3\Flow\Mvc\View\JsonView_Original::transformValue(TYPO3\Flow\Persistence\Doctrine\Proxies\__CG__\project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers, array|0|)
+16 TYPO3\Flow\Mvc\View\JsonView_Original::transformValue(array|3|, array|0|)
+15 TYPO3\Flow\Mvc\View\JsonView_Original::renderArray()
+14 TYPO3\Flow\Mvc\View\JsonView_Original::render()
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+GET /emulate/emulate8086/Standard/getMemory?data=%22%22 HTTP/1.1
+Host: emulate.project
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: en-US,en;q=0.8
+Cache-Control: max-age=0
+
+
+
+HTTP RESPONSE:
+[response was empty]

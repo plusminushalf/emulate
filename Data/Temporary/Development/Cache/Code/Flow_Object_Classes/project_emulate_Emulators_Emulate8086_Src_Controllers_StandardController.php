@@ -48,6 +48,17 @@ class StandardController_Original {
     	$this->memory = $this->memoryRepository->getMemory($this->user->getUserAccount()->getUsername())->getFirst();
     }
 
+	/**
+	 * @return string
+	 */
+	public function getMemoryAction() {
+		return [
+			'flags' => $this->memory->getFlags(),
+			'registers' => $this->memory->getRegisters(),
+			'segments' => $this->memory->getSegments()
+		];
+	}
+
     /**
      * Sets the register value sent by ajax
      * @param array $data

@@ -12,31 +12,61 @@ class Memory_Original {
 
 	/**
 	 * All flags
-	 * @var object
-	 * @ORM\OneToOne(targetEntity="project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags", mappedBy="Memory")
+	 * @var array
 	 */
 	protected $flags;
 
 	/**
 	 * Registers
-	 * @var object
-	 * @ORM\OneToOne(targetEntity="project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers", mappedBy="Memory")
+	 * @var array
 	 */
 	protected $registers;
 
 	/**
 	 * Memory
-	 * @var object
-	 * @ORM\OneToOne(targetEntity="project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments", mappedBy="Memory")
+	 * @var array
 	 */
 	protected $segments;
 
 	/**
-	 * Username of the usesr
+	 * Username of the user
 	 * @var string
 	 * @Flow\Identity
 	 */
 	protected $username;
+
+	public function __construct() {
+		$this->flags = [
+			'carry' => 0x0,
+			'parity' => 0x0,
+			'auxilary' => 0x0,
+			'zero' => 0x0,
+			'sign' => 0x0,
+			'trace' => 0x0,
+			'interept' => 0x0,
+			'direction' => 0x0,
+			'overflow'  => 0x0
+		];
+
+		$this->registers = [
+			'ax' => 0x0,
+			'bx' => 0x0,
+			'cx' => 0x0,
+			'dx' => 0x0,
+			'sp' => 0x0,
+			'bp' => 0x0,
+			'si' => 0x0,
+			'di' => 0x0,
+		];
+
+		$this->segments = [
+			'code' => [0x0000 => 0x000A, 0xffff => 0x0000],
+			'data' => [0x0000 => 0x000A, 0xffff => 0x0000],
+			'stack' => [0x0000 => 0x000A, 0xffff => 0x0000],
+			'extra' => [0x0000 => 0x000A, 0xffff => 0x0000]
+		];
+
+	}
 
 	/**
 	 * sets the flags
@@ -48,7 +78,7 @@ class Memory_Original {
 
 	/**
 	 * returns the flags
-	 * @return \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Flags
+	 * @return array
 	 */
 	public function getFlags() {
 		return $this->flags;
@@ -58,7 +88,7 @@ class Memory_Original {
 	 * sets the username
 	 * @param string $username
 	 */
-	public function setusername($username) {
+	public function setUsername($username) {
 		$this->username = $username;
 	}
 
@@ -66,13 +96,13 @@ class Memory_Original {
 	 * returns the username
 	 * @return string
 	 */
-	public function getusername() {
+	public function getUsername() {
 		return $this->username;
 	}
 
 	/**
 	 * sets the registers
-	 * @param \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Registers $registers
+	 * @param array
 	 */
 	public function setRegisters($registers) {
 		$this->registers = $registers;
@@ -80,7 +110,7 @@ class Memory_Original {
 
 	/**
 	 * returns the registers
-	 * @return \project\emulate\Emulators\Emulate8086\Src\Domain\Model\registers
+	 * @return array
 	 */
 	public function getRegisters() {
 		return $this->registers;
@@ -88,7 +118,7 @@ class Memory_Original {
 
 	/**
 	 * sets the segments
-	 * @param \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments $segments
+	 * @param array
 	 */
 	public function setSegments($segments) {
 		$this->segments = $segments;
@@ -96,7 +126,7 @@ class Memory_Original {
 
 	/**
 	 * returns the segments
-	 * @return \project\emulate\Emulators\Emulate8086\Src\Domain\Model\Segments
+	 * @return array
 	 */
 	public function getSegments() {
 		return $this->segments;
@@ -138,6 +168,7 @@ class Memory extends Memory_Original implements \TYPO3\Flow\Object\Proxy\ProxyIn
 		$this->Flow_Aop_Proxy_buildMethodsAndAdvicesArray();
 
 			if (isset($this->Flow_Aop_Proxy_methodIsInAdviceMode['__construct'])) {
+		parent::__construct();
 
 			} else {
 				$this->Flow_Aop_Proxy_methodIsInAdviceMode['__construct'] = TRUE;
@@ -171,17 +202,17 @@ class Memory extends Memory_Original implements \TYPO3\Flow\Object\Proxy\ProxyIn
 
 		$objectManager = \TYPO3\Flow\Core\Bootstrap::$staticObjectManager;
 		$this->Flow_Aop_Proxy_targetMethodsAndGroupedAdvices = array(
-			'__construct' => array(
-				'TYPO3\Flow\Aop\Advice\BeforeAdvice' => array(
-					new \TYPO3\Flow\Aop\Advice\BeforeAdvice('TYPO3\Flow\Persistence\Aspect\PersistenceMagicAspect', 'generateUuid', $objectManager, NULL),
-				),
-			),
 			'__clone' => array(
 				'TYPO3\Flow\Aop\Advice\BeforeAdvice' => array(
 					new \TYPO3\Flow\Aop\Advice\BeforeAdvice('TYPO3\Flow\Persistence\Aspect\PersistenceMagicAspect', 'generateUuid', $objectManager, NULL),
 				),
 				'TYPO3\Flow\Aop\Advice\AfterReturningAdvice' => array(
 					new \TYPO3\Flow\Aop\Advice\AfterReturningAdvice('TYPO3\Flow\Persistence\Aspect\PersistenceMagicAspect', 'cloneObject', $objectManager, NULL),
+				),
+			),
+			'__construct' => array(
+				'TYPO3\Flow\Aop\Advice\BeforeAdvice' => array(
+					new \TYPO3\Flow\Aop\Advice\BeforeAdvice('TYPO3\Flow\Persistence\Aspect\PersistenceMagicAspect', 'generateUuid', $objectManager, NULL),
 				),
 			),
 		);
