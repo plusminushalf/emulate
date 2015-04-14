@@ -1,7 +1,7 @@
-  function ajax(urlpassed,dynamicData) {
+function ajax(urlpassed,dynamicData) {
     return $.ajax({
-      url: urlpassed,
-      type: "post",
-      data: dynamicData
+        url: urlpassed,
+        type: "post",
+        data: dynamicData
     });
-  }
+}

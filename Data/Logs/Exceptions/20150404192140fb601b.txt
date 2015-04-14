@@ -1,0 +1,36 @@
+Uncaught exception #1297759968 in line 271 of /home/garvitdelhi/dev/php/www/emulate/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/TYPO3_Flow_Mvc_Controller_Argument.php: Exception while property mapping for target type "string", at property path "": No converter found which can be used to convert from "array" to "string".
+
+15 TYPO3\Flow\Property\PropertyMapper_Original::convert(array|3|, "string", TYPO3\Flow\Mvc\Controller\MvcPropertyMappingConfiguration)
+14 TYPO3\Flow\Mvc\Controller\Argument_Original::setValue(array|3|)
+13 TYPO3\Flow\Mvc\Controller\AbstractController::mapRequestArgumentsToControllerArguments()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /emulate/emulate8086/Standard/getMemory HTTP/1.1
+Host: emulate.project
+Connection: keep-alive
+Content-Length: 841
+Accept: */*
+Origin: http://emulate.project
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://emulate.project/emulator
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+
+data%5Bflags%5D%5Bcarry%5D=0&data%5Bflags%5D%5Bparity%5D=0&data%5Bflags%5D%5Bauxilary%5D=0&data%5Bflags%5D%5Bzero%5D=0&data%5Bflags%5D%5Bsign%5D=0&data%5Bflags%5D%5Btrace%5D=0&data%5Bflags%5D%5Binterept%5D=0&data%5Bflags%5D%5Bdirection%5D=0&data%5Bflags%5D%5Boverflow%5D=0&data%5Bregisters%5D%5Bax%5D=10&data%5Bregisters%5D%5Bbx%5D=0&data%5Bregisters%5D%5Bcx%5D=0&data%5Bregisters%5D%5Bdx%5D=0&data%5Bregisters%5D%5Bsp%5D=0&data%5Bregisters%5D%5Bbp%5D=0&data%5Bregisters%5D%5Bsi%5D=0&data%5Bregisters%5D%5Bdi%5D=0&data%5Bsegments%5D%5Bcode%5D%5B0%5D=10&data%5Bsegments%5D%5Bcode%5D%5B65535%5D=0&data%5Bsegments%5D%5Bdata%5D%5B0%5D=10&data%5Bsegments%5D%5Bdata%5D%5B65535%5D=0&data%5Bsegments%5D%5Bstack%5D%5B0%5D=10&data%5Bsegments%5D%5Bstack%5D%5B65535%5D=0&data%5Bsegments%5D%5Bextra%5D%5B0%5D=10&data%5Bsegments%5D%5Bextra%5D%5B65535%5D=0
+
+HTTP RESPONSE:
+[response was empty]

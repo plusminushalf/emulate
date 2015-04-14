@@ -1,23 +1,98 @@
 (function(){
 
+    window.onbeforeunload = function () {
+        if(memoryChanged.changed) {
+            return "Emulator changes are not saved.";
+        } else {
+            window.onbeforeunload = undefined;
+        }
+    };
+
     var memory;
+    var memoryChanged = {
+        changed: false,
+        number: 0
+    };
     $("#command").prop('disabled', true);
     var request = ajax('/emulate/emulate8086/Standard/getMemory', { data: ""});
     request.done(function(data) {
         memory = data;
         $("#command").prop('disabled', false);
+        // Memory check/validation
         console.log(memory);
     });
     request.fail(function() {
         alert( "Error while loading emulator's memory please refresh." );
     });
 
+    $('#saveMemory').on('click', function(){
+        if(memoryChanged.changed && memoryChanged.number > 0) {
+            var request = ajax('/emulate/emulate8086/Standard/setMemory', {data: JSON.stringify(memory)});
+            request.done(function(data) {
+                if(data[0]) {
+                    $('.btn.btn-warning.btn-circle').addClass('btn-success').removeClass('btn-warning');
+                    memoryChanged.number = 0;
+                    memoryChanged.changed = false;
+                }
+            });
+            request.fail(function() {
+                alert( "Error while saving emulator's memory please refresh." );
+            });
+        }
+    });
 
 
+    watch(memoryChanged, "changed", function(){
+        if(memoryChanged.changed) $('.btn.btn-success.btn-circle').addClass('btn-warning').removeClass('btn-success');
+    });
 
+    var timer = setInterval(function () {
+        if(memoryChanged.changed && memoryChanged.number > 0) {
+            var request = ajax('/emulate/emulate8086/Standard/setMemory', {data: JSON.stringify(memory)});
+            request.done(function(data) {
+                if(data[0]) {
+                    $('.btn.btn-warning.btn-circle').addClass('btn-success').removeClass('btn-warning');
+                    memoryChanged.number = 0;
+                    memoryChanged.changed = false;
+                }
+            });
+            request.fail(function() {
+                alert( "Error while saving emulator's memory please refresh." );
+            });
+        }
+    }, 30000);
 
-
-
+    watch(memoryChanged, "number", function(){
+        if(memoryChanged.changed && memoryChanged.number == 15) {
+            var request = ajax('/emulate/emulate8086/Standard/setMemory', {data: JSON.stringify(memory)});
+            request.done(function(data) {
+                if(data[0]) {
+                    $('.btn.btn-warning.btn-circle').addClass('btn-success').removeClass('btn-warning');
+                    memoryChanged.number = 0;
+                    memoryChanged.changed = false;
+                    clearInterval(timer);
+                    timer = setsetInterval(function () {
+                        if(memoryChanged.changed && memoryChanged.number > 0) {
+                            var request = ajax('/emulate/emulate8086/Standard/setMemory', {data: JSON.stringify(memory)});
+                            request.done(function(data) {
+                                if(data[0]) {
+                                    $('.btn.btn-warning.btn-circle').addClass('btn-success').removeClass('btn-warning');
+                                    memoryChanged.number = 0;
+                                    memoryChanged.changed = false;
+                                }
+                            });
+                            request.fail(function() {
+                                alert( "Error while saving emulator's memory please refresh." );
+                            });
+                        }
+                    }, 30000);
+                }
+            });
+            request.fail(function() {
+                alert( "Error while saving emulator's memory please refresh." );
+            });
+        }
+    });
 
 
 
@@ -160,26 +235,23 @@
             return false;
         }
         this.save = function(cb) {
-            console.log(JSON.stringify(commands_entered.commands));
-            $("#display").html('wait');
-            return ajax('/emulate/emulate8086/Standard/saveCode',
-                {
-                    data: JSON.stringify(commands_entered.commands)
+            for(var offset in commands_entered.commands) {
+                if(commands_entered.commands.hasOwnProperty(offset)) {
+                    var code = commands_entered.commands[offset].code;
+                    var memoryRequired = commands_entered.commands[offset].memory-1;
+                    memory.segments.code[offset] = code;
+                    memoryChanged.number++;
+                    while(memoryRequired--) {
+                        offset++;
+                        memory.segments.code[offset] = -1;
+                        memoryChanged.number++;
+                    }
                 }
-            ).done(function(data) {
-                    if(data == 'logout') {
-                        location.reload();
-                    }
-                    if(data == 'true') {
-                        delete commands_entered;
-                        commands_entered = new commandsEntered();
-                        return cb();
-                    } else {
-                        console.log(data);
-                        $("#display").html('Error while trying to save your code,\
-					 It has some errors. Please refresh the page and try again');
-                    }
-                });
+            }
+            memoryChanged.changed = true;
+            delete commands_entered;
+            commands_entered = new commandsEntered();
+            return cb();
         }
     }
 
@@ -228,21 +300,12 @@
                 }
                 option = '0x' + option;
                 if(option>=0x0000 && option<=0xffff) {
-                    $("#display").html('wait');
-                    return ajax('/emulate/emulate8086/Standard/executeCode',
-                        {
-                            data: JSON.stringify({"offset": parseInt(option, 16)})
-                        }
-                    ).done(function(data) {
-                            if(data == 'logout') {
-                                location.reload();
-                            }
-                            console.log(data);
-                            if(data == 'true') {
-                                $(document).trigger($.Event('keydown', {which: 27}));
-                                return true;
-                            }
-                        });
+                    $('#display').html('wait');
+                    execute(option, memory, function(state) {
+                        if(state) $(document).trigger($.Event('keydown', {which: 27}));
+                        else $('#display').html('Possibility of Infinite loop');
+                    });
+                    return true;
                 } else {
                     return false;
                 }
@@ -288,7 +351,8 @@
             if(option>=0x0000 && option<=0xffff) {
 
                 memory.registers[parent.attr('data-register').toLowerCase()] = parseInt(option, 16);
-
+                memoryChanged.changed = true;
+                memoryChanged.number++;
                 parent.addClass('editRegister');
                 parent.html(option.substring(2).toUpperCase());
             } else {
@@ -317,8 +381,9 @@
                         break;
                 }
 
-                memory.segments[segment][parseInt(parent.attr('data-offset'))] = parseInt(option, 16);
-
+                memory.segments[segment][parseInt(parent.attr('data-offset'), 16)] = parseInt(option, 16);
+                memoryChanged.changed = true;
+                memoryChanged.number++;
                 that.remove();
                 parent.addClass('editMemory');
                 parent.html(option.substring(2).toUpperCase());
@@ -472,6 +537,7 @@
     var terminal = new Terminal();
     $("#inputcode").submit(function(e) {
         command = $("#command").val().toUpperCase().trim();
+        var date1 = new Date();
         if(!terminal.loadedCommand) {
             if(terminal.load(command)) {
                 $("#error").text("");
@@ -487,6 +553,7 @@
                 $("#error").text("Wrong Option Entered");
             }
         }
+        //console.log(new Date() - date1);
         e.preventDefault();
     });
     $(document).on('keydown', function(e) {
@@ -499,6 +566,601 @@
     });
 
 
+
+    var singleGenerateInstructionObject = function(stts) {
+        return {
+            operands: [ { operand1:undefined, operand2: undefined } ],
+            memory: [ { memory:0x1 } ],
+            status:stts
+        }
+    }
+
+    var doubleGenerateInstructionObject = function(mem, stts) {
+        return {
+            operands: [
+                { operand1:5, operand2: undefined },
+                { operand1:4, operand2: undefined }
+            ],
+            memory: [
+                { memory:mem }, { memory:mem }
+            ],
+            status:stts
+        }
+    }
+
+    var instructorObject = function(stts) {
+        return {
+            operands: [
+                { operand1:1,  operand2:undefined },
+                { operand1:2,  operand2:undefined },
+                { operand1:6,  operand2:undefined }
+            ],
+            memory: [
+                { memory:0x1 }, { memory:0x1 }, { memory:0x1 }
+            ],
+            status:stts
+        }
+    }
+
+    var addLikeInstructionObject = function(stts) {
+        return {
+            operands: [
+                { operand1:1,  operand2:1},
+                { operand1:1,  operand2:6},
+                { operand1:2,  operand2:4},
+                { operand1:6,  operand2:1},
+                { operand1:6,  operand2:4},
+                { operand1:1,  operand2:5},
+                { operand1:6,  operand2:5},
+                { operand1:2,  operand2:2},
+                { operand1:2,  operand2:6},
+                { operand1:1,  operand2:4}
+            ],
+            memory: [
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x3 },
+                { memory:0x3 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 }
+            ],
+            status:stts
+        }
+    }
+
+    var shrLikeInstructionObject = function(stts) {
+        return {
+            operands: [
+                { operand1:6,  operand2:4},
+                { operand1:6,  operand2:2},
+                { operand1:2,  operand2:4},
+                { operand1:1,  operand2:2},
+                { operand1:6,  operand2:5},
+                { operand1:1,  operand2:5},
+                { operand1:1,  operand2:4 }
+            ],
+            memory: [
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x3 },
+                { memory:0x3 },
+                { memory:0x2 }
+            ],
+            status:stts
+        }
+    }
+
+    var validInstructions = {
+        'AAA': singleGenerateInstructionObject(0),
+        'AAD': singleGenerateInstructionObject(0),
+        'AAM': singleGenerateInstructionObject(0),
+        'AAS': singleGenerateInstructionObject(0),
+        'CBW': singleGenerateInstructionObject(0),
+        'CLC': singleGenerateInstructionObject(0),
+        'CLD': singleGenerateInstructionObject(0),
+        'CLI': singleGenerateInstructionObject(0),
+        'CMC': singleGenerateInstructionObject(0),
+        'CWD': singleGenerateInstructionObject(0),
+        'DAA': singleGenerateInstructionObject(0),
+        'DAS': singleGenerateInstructionObject(0),
+        'HLT': singleGenerateInstructionObject(0),
+        'INTO': singleGenerateInstructionObject(0),
+        'IRET': singleGenerateInstructionObject(0),
+        'LAHF': singleGenerateInstructionObject(0),
+        'LODSB': singleGenerateInstructionObject(0),
+        'LODSW': singleGenerateInstructionObject(0),
+        'MOVSB': singleGenerateInstructionObject(0),
+        'MOVSW': singleGenerateInstructionObject(0),
+        'NOP': singleGenerateInstructionObject(0),
+        'RET': singleGenerateInstructionObject(0),
+        'RETF': singleGenerateInstructionObject(0),
+        'SAHF': singleGenerateInstructionObject(0),
+        'SCASB': singleGenerateInstructionObject(0),
+        'SCASW': singleGenerateInstructionObject(0),
+        'STC': singleGenerateInstructionObject(0),
+        'STD': singleGenerateInstructionObject(0),
+        'STI': singleGenerateInstructionObject(0),
+        'STOSB': singleGenerateInstructionObject(0),
+        'STOSW': singleGenerateInstructionObject(0),
+        'XLATB': singleGenerateInstructionObject(0),
+        'CALL': doubleGenerateInstructionObject(0x02, 0),
+        'JA': doubleGenerateInstructionObject(0x02, 0),
+        'JAE': doubleGenerateInstructionObject(0x02, 0),
+        'JB': doubleGenerateInstructionObject(0x02, 0),
+        'JBE': doubleGenerateInstructionObject(0x02, 0),
+        'JC': doubleGenerateInstructionObject(0x02, 0),
+        'JCXZ': doubleGenerateInstructionObject(0x02, 0),
+        'JE': doubleGenerateInstructionObject(0x02, 0),
+        'JG': doubleGenerateInstructionObject(0x02, 0),
+        'JGE': doubleGenerateInstructionObject(0x02, 0),
+        'JL': doubleGenerateInstructionObject(0x02, 0),
+        'JLE': doubleGenerateInstructionObject(0x02, 0),
+        'JMP': doubleGenerateInstructionObject(0x02, 1),
+        'JNA': doubleGenerateInstructionObject(0x02, 0),
+        'JNAE': doubleGenerateInstructionObject(0x02, 0),
+        'JNB': doubleGenerateInstructionObject(0x02, 0),
+        'JNBE': doubleGenerateInstructionObject(0x02, 0),
+        'JNC': doubleGenerateInstructionObject(0x02, 0),
+        'JNE': doubleGenerateInstructionObject(0x02, 0),
+        'JNG': doubleGenerateInstructionObject(0x02, 0),
+        'JNGE': doubleGenerateInstructionObject(0x02, 0),
+        'JNL': doubleGenerateInstructionObject(0x02, 0),
+        'JNLE': doubleGenerateInstructionObject(0x02, 0),
+        'JNO': doubleGenerateInstructionObject(0x02, 0),
+        'JNP': doubleGenerateInstructionObject(0x02, 0),
+        'JNS': doubleGenerateInstructionObject(0x02, 0),
+        'JNZ': doubleGenerateInstructionObject(0x02, 0),
+        'JO': doubleGenerateInstructionObject(0x02, 0),
+        'JP': doubleGenerateInstructionObject(0x02, 0),
+        'JPE': doubleGenerateInstructionObject(0x02, 0),
+        'JPO': doubleGenerateInstructionObject(0x02, 0),
+        'JS': doubleGenerateInstructionObject(0x02, 0),
+        'JZ': doubleGenerateInstructionObject(0x1, 0),
+        'LOOP': doubleGenerateInstructionObject(0x1, 0),
+        'LOOPE': doubleGenerateInstructionObject(0x1, 0),
+        'LOOPNE': doubleGenerateInstructionObject(0x1, 0),
+        'LOOPNZ': doubleGenerateInstructionObject(0x1, 0),
+        'LOOPZ': doubleGenerateInstructionObject(0x1, 0),
+        'DEC': instructorObject(0),
+        'DIV': instructorObject(0),
+        'IDIV': instructorObject(0),
+        'IMUL': instructorObject(0),
+        'INC': instructorObject(0),
+        'NEG': instructorObject(0),
+        'NOT': instructorObject(0),
+        'INT': {
+            operands: [
+                { operand1:4, operand2: undefined }
+            ],
+            memory: [ { memory:0x1 } ],
+            status:0
+        },
+        'POPA': singleGenerateInstructionObject(0),
+        'POPF': singleGenerateInstructionObject(0),
+        'POP': {
+            operands: [
+                { operand1:1, operand2: undefined },
+                { operand1:3, operand2: undefined },
+                { operand1:6, operand2: undefined }
+            ],
+            memory: [
+                { memory:0x1 }, { memory:0x1 }, { memory:0x1 }
+            ],
+            status:0
+        },
+        'PUSHA': singleGenerateInstructionObject(0),
+        'PUSHF': singleGenerateInstructionObject(0),
+        'PUSH': {
+            operands: [
+                { operand1:1, operand2: undefined },
+                { operand1:3, operand2: undefined },
+                { operand1:6, operand2: undefined },
+                { operand1:5, operand2: undefined },
+                { operand1:4, operand2: undefined }
+            ],
+            memory: [
+                { memory:0x1 }, { memory:0x1 }, { memory:0x1 }, { memory:0x1 }
+            ],
+            status:0
+        },
+
+        'LDS': {
+            operands: [
+                { operand1:1,  operand2:6 },
+                { operand1:2,  operand2:6 }
+            ],
+            memory: [
+                { memory:0x2 }, { memory:0x2 }
+            ],
+            status:0
+        },
+
+        'LEA': {
+            operands: [
+                { operand1:1,  operand2:6 },
+                { operand1:2,  operand2:6 }
+            ],
+            memory: [
+                { memory:0x2 }, { memory:0x2 }
+            ],
+            status:0
+        },
+
+        'LES': {
+            operands: [
+                { operand1:1,  operand2:6 },
+                { operand1:2,  operand2:6 }
+            ],
+            memory: [
+                { memory:0x2 }, { memory:0x2 }
+            ],
+            status:0
+        },
+
+        'XCHG': {
+            operands: [
+                { operand1:6,  operand2:1},
+                { operand1:1,  operand2:1},
+                { operand1:1,  operand2:6},
+                { operand1:2,  operand2:2},
+                { operand1:2,  operand2:6 }
+            ],
+            memory: [
+                { memory:0x2 }, { memory:0x2 }, { memory:0x2 }, { memory:0x2 }, { memory:0x2 }
+            ],
+            status:0
+        },
+
+        'MUL': {
+            operands: [
+                { operand1:1, operand2: undefined },
+                { operand1:6, operand2: undefined },
+                { operand1:2, operand2: undefined }
+            ],
+            memory: [
+                { memory:0x1 }, { memory:0x1 }, { memory:0x1 }
+            ],
+            status:0
+        },
+        'CMPSB': singleGenerateInstructionObject(0),
+        'CMPSW': singleGenerateInstructionObject(0),
+        'CMP': addLikeInstructionObject(0),
+        'OR': addLikeInstructionObject(0),
+        'SBB': addLikeInstructionObject(0),
+        'SUB': {
+            operands: [
+                { operand1:1,  operand2:1 },
+                { operand1:1,  operand2:6 },
+                { operand1:2,  operand2:4 },
+                { operand1:6,  operand2:1 },
+                { operand1:6,  operand2:4 },
+                { operand1:1,  operand2:5 },
+                { operand1:6,  operand2:5 },
+                { operand1:2,  operand2:2 },
+                { operand1:2,  operand2:6 },
+                { operand1:1,  operand2:4 }
+            ],
+            memory: [
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x3 },
+                { memory:0x3 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 }
+            ],
+            status:0
+        },
+        'TEST': addLikeInstructionObject(0),
+        'XOR': addLikeInstructionObject(0),
+        'RCL': shrLikeInstructionObject(0),
+        'RCR': shrLikeInstructionObject(0),
+        'ROL': {
+            operands: [
+                { operand1:6,  operand2:4 },
+                { operand1:6,  operand2:'cl' },
+                { operand1:2,  operand2:4 },
+                { operand1:1,  operand2:'cl' },
+                { operand1:6,  operand2:5 },
+                { operand1:1,  operand2:5 },
+                { operand1:1,  operand2:4 }
+            ],
+            memory: [
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x3 },
+                { memory:0x3 },
+                { memory:0x2 }
+            ],
+            status:0
+        },
+        'ROR': shrLikeInstructionObject(0),
+        'SAL': shrLikeInstructionObject(0),
+        'SAR': shrLikeInstructionObject(0),
+        'SHL': shrLikeInstructionObject(0),
+        'SHR': shrLikeInstructionObject(0),
+        'ADC': addLikeInstructionObject(0),
+        'ADD': addLikeInstructionObject(1),
+        'AND': addLikeInstructionObject(0),
+        'MOV': {
+            operands: [
+                { operand1:1,  operand2:1 },
+                { operand1:1,  operand2:6 },
+                { operand1:2,  operand2:4 },
+                { operand1:6,  operand2:1 },
+                { operand1:6,  operand2:4 },
+                { operand1:1,  operand2:5 },
+                { operand1:6,  operand2:5 },
+                { operand1:2,  operand2:2 },
+                { operand1:2,  operand2:6 },
+                { operand1:1,  operand2:4 },
+                { operand1:6,  operand2:2 }
+            ],
+            memory: [
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x3 },
+                { memory:0x3 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 },
+                { memory:0x2 }
+            ],
+            status:1
+        }
+    }
+
+    var execute = function(offset, memory, cb) {
+        this.memory = memory;
+        setTimeout(function() {
+            var state = true, i = 0;
+            offset = parseInt(offset, 16);
+            do {
+                var result = this.executeOffset(offset);
+                if(result.constructor === Object) {
+                    offset = result.offset;
+                    result = true;
+                } else {
+                    if(result == -1) {
+                        alert('Memory Error reloading page your data will be lost.\ ' +
+                        'Sorry for the inconvenience We would try to fix this error as soon as possible.\ ' +
+                        'We have logged this error.');
+                        location.reload();
+                    }
+                    ++offset;
+                }
+                ++i;
+            } while(result == true && i < 100000);
+            if(i >= 100000) state = false;
+            cb(state);
+        }, 0);
+
+        /*
+            -1 on faliure
+            true on going ahead
+            false to stop
+         */
+        this.executeOffset = function(offset) {
+            if(this.memory.segments.code.hasOwnProperty(offset)) var line = this.memory.segments.code[offset];
+            else line = 0;
+            if(line === 0 || line === -1) {
+                return true;
+            }
+            line = line.split(" ");
+            var instruction = null;
+            var operands = null;
+            if(line[0] != undefined) instruction = line[0].toLowerCase();
+            if(line[1] != undefined) operands = line[1].toLowerCase();
+            if(this.hasOwnProperty(instruction)) return this[instruction](operands);
+        };
+
+        this.getValueFromMemory = function(operand) {
+            var value;
+            if(this.memory.registers.hasOwnProperty(operand)) return this.memory.registers[operand];
+            if(operand.indexOf('[') != -1) {
+                operand = operand.slice(1, operand.length-1);
+            }
+            if(this.memory.registers.hasOwnProperty(operand)) operand = this.memory.registers[operand];
+            if(
+                this.memory.segments.data.hasOwnProperty(operand) ||
+                this.memory.segments.data.hasOwnProperty(operand+1)
+            ) {
+                var v1 = this.memory.segments.data[operand] || 0;
+                v1 = this.convertTostring(v1, 16, 2);
+                var v2 = this.memory.segments.data[operand+1] || 0;
+                v2 = this.convertTostring(v2, 16, 2);
+                value = parseInt(v2 + v1, 16);
+            }
+            var reg8bit = {
+                'ah': 'ax',
+                'al': 'ax',
+                'bl': 'bx',
+                'bh': 'bx',
+                'ch': 'cx',
+                'cl': 'cx',
+                'dh': 'dx',
+                'dl': 'dx'};
+            if(reg8bit.hasOwnProperty(operand)) {
+                var v = this.memory.registers[reg8bit[operand]];
+                v = this.convertTostring(v, 16, 4);
+                if(operand.indexOf('h') != -1) {
+                    value = parseInt(v.slice(0, 2), 16);
+                } else {
+                    value = parseInt(v.slice(2), 16);
+                }
+            }
+            return value;
+        };
+
+        this.setValueInMemory = function(operand, value) {
+            if(this.memory.registers.hasOwnProperty(operand)) {
+                this.memory.registers[operand] = value;
+            }
+            var reg8bit = {
+                'ah': 'ax',
+                'al': 'ax',
+                'bl': 'bx',
+                'bh': 'bx',
+                'ch': 'cx',
+                'cl': 'cx',
+                'dh': 'dx',
+                'dl': 'dx'};
+            if(reg8bit.hasOwnProperty(operand)) {
+                var v = this.memory.registers[reg8bit[operand]];
+                v = this.convertTostring(v, 16, 4);
+                value = this.convertTostring(value, 16, 4);
+                if(operand.indexOf('h') != -1) {
+                    value = parseInt(value.slice(2)+v.slice(2), 16);
+                } else {
+                    value = parseInt(v.slice(0, 2)+value.slice(2), 16);
+                }
+                this.memory.registers[reg8bit[operand]] = value;
+            }
+            if(operand.indexOf('[') != -1) {
+                operand = operand.slice(1, operand.length-1);
+                if(this.memory.registers.hasOwnProperty(operand)) operand = this.memory.registers[operand];
+                if(operand.constructor == String) operand = parseInt(operand, 16);
+                value = value.toString(16);
+                if(value.length <= 2) {
+                    this.memory.segments.data[operand] = parseInt(value, 16);
+                } else {
+                    this.convertTostring(al, 16, 4);
+                    this.memory.segments.data[operand] = parseInt(value.slice(2), 16);
+                    this.memory.segments.data[operand+1] = parseInt(value.slice(0, 2), 16);
+                }
+            }
+            memoryChanged.changed = true;
+            memoryChanged.number++;
+        };
+
+        this.mov = function(operands) {
+            operands = operands.split(',');
+            var value = this.getValueFromMemory(operands[1]) || parseInt(operands[1], 16);
+            this.setValueInMemory(operands[0], value);
+            return true;
+        };
+
+        this.aaa = function(operands) {
+            var value = this.getValueFromMemory('al');
+            value = this.convertTostring(value, 16, 2);
+            if(parseInt(value[value.length-1], 16) > 9 || this.memory.flags.auxilary == 1) {
+                value = parseInt(value, 16) + 6;
+                if(value > 255) {
+                    value = 255;
+                    this.memory.flags.overflow = 1;
+                }
+                value = this.convertTostring(al, 16, 2);;
+                value = parseInt(value[value.length-1], 16);
+                this.setValueInMemory('al', value);
+                value = this.getValueFromMemory('ah') + 1;
+                this.setValueInMemory('ah', value);
+                this.memory.flags.auxilary = 1;
+                this.memory.flags.carry = 1;
+            } else {
+                value = parseInt(value[value.length-1], 16);
+                this.setValueInMemory('al', value);
+                this.memory.flags.auxilary = 0;
+                this.memory.flags.carry = 0;
+            }
+            return true;
+        };
+
+        this.aad = function() {
+            var al = this.getValueFromMemory('al');
+            var ah = this.getValueFromMemory('ah');
+            al = ah*10 + al;
+            ah = 0;
+            this.setValueInMemory('ah', ah);
+            this.setValueInMemory('al', al);
+            this.signFlagCheck(ax);
+            al = this.convertTostring(al, 16, 2);
+            ah = this.convertTostring(ah, 16, 2);
+            var ax = parseInt(ah + al, 16);
+            this.zeroFlagCheck(ax);
+            this.parityFlagCheck(ax);
+            this.signFlagCheck(ax);
+            return true;
+        };
+
+        this.aam = function() {
+            var al = this.getValueFromMemory('al');
+            var ah = parseInt(al/10);
+            al = al%10;
+            this.setValueInMemory('al', al);
+            this.setValueInMemory('ah', ah);
+            al = this.convertTostring(al, 16, 2);
+            ah = this.convertTostring(ah, 16, 2);
+            var ax = parseInt(ah + al, 16);
+            this.zeroFlagCheck(ax);
+            this.parityFlagCheck(ax);
+            this.signFlagCheck(ax);
+            return true;
+        };
+
+        this.aas = function() {
+            
+        };
+
+        this.hlt = function(operands) {
+            return false;
+        };
+
+        this.convertTostring = function (value, base, bytes) {
+            value = value.toString(base);
+            var a = bytes-value.length;
+            if(a < 0) {
+
+            }
+            while(a--) value = '0'+value;
+            return value;
+        };
+
+        this.overflowFlagCheck = function(value, bytes) {
+            if(bytes == 4 && value > 65535) this.memory.flags.sign = 1;
+            if(bytes == 2 && value > 255) this.memory.flags.sign = 1;
+            else this.memory.flags.sign = 0;
+            return this.memory.flags.sign;
+        };
+
+        this.parityFlagCheck = function(value) {
+            value = this.convertTostring(value, 2, 16).slice(8);
+            var cnt = 0;
+            for(i = 0; i < value.length; ++i ) {
+                if(value[i] == 1) cnt++;
+            }
+            if(cnt&1 == 0) this.memory.flags.parity = 1;
+            else this.memory.flags.parity = 0;
+            return this.memory.flags.parity;
+        };
+
+        this.signFlagCheck = function(value) {
+            value = this.convertTostring(value, 2, 16);
+            if(value[0] == 1) this.memory.flags.zero = 1;
+            else this.memory.flags.zero = 0;
+            return this.memory.flags.zero;
+        };
+
+        this.zeroFlagCheck = function(value) {
+            if(value == 0) this.memory.flags.zero = 1;
+            else this.memory.flags.zero = 0;
+            return this.memory.flags.zero;
+        };
+
+    }
 
 
 }).call(this);

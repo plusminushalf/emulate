@@ -1,0 +1,38 @@
+Uncaught exception in line 147 of /home/garvitdelhi/dev/php/www/emulate/Data/Temporary/Development/Cache/Code/Flow_Object_Classes/project_emulate_Domain_Model_Emulate.php: hey
+
+17 project\emulate\Emulators\Emulate8086\Src\Controllers\StandardController_Original::setMemoryAction(array|3|)
+16 project\emulate\Domain\Model\Emulate_Original::callEmulatorController("Emulate8086", "Standard", "setMemory", array|3|)
+15 project\emulate\Controller\EmulatorController_Original::emulatorControllerAction("emulate8086", "Standard", "setMemory", "{"flags":{"carry":0,"parity":0,"auxilary":0,"zero":0,"sign":0,"trace":0,"interept":0,"direction":0,"overflow":0},"registers":{"ax":56506,"bx":48350,"cx":12,"dx":13,"sp":0,"bp":0,"si":0,"di":11},"segments":{"code":{"0":10,"517":"MOV AX,BX","518":-1,"519":"INC AX","520":"HLT","521":"MOV AX,BX","522":-1,"523":"MOV AX,BX","524":-1,"525":"MOV AX,BX","526":-1,"65535":0},"data":{"0":10,"65535":0},"stack":{"0":10,"65535":0},"extra":{"0":10,"65535":0}}}")
+14 call_user_func_array(array|2|, array|4|)
+13 TYPO3\Flow\Mvc\Controller\ActionController_Original::callActionMethod()
+12 TYPO3\Flow\Mvc\Controller\ActionController_Original::processRequest(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+11 TYPO3\Flow\Mvc\Dispatcher_Original::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+10 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+9 call_user_func_array(array|2|, array|2|)
+8 TYPO3\Flow\Mvc\Dispatcher::Flow_Aop_Proxy_invokeJoinPoint(TYPO3\Flow\Aop\JoinPoint)
+7 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+6 TYPO3\Flow\Security\Aspect\RequestDispatchingAspect_Original::blockIllegalRequestsAndForwardToAuthenticationEntryPoints(TYPO3\Flow\Aop\JoinPoint)
+5 TYPO3\Flow\Aop\Advice\AroundAdvice::invoke(TYPO3\Flow\Aop\JoinPoint)
+4 TYPO3\Flow\Aop\Advice\AdviceChain::proceed(TYPO3\Flow\Aop\JoinPoint)
+3 TYPO3\Flow\Mvc\Dispatcher::dispatch(TYPO3\Flow\Mvc\ActionRequest, TYPO3\Flow\Http\Response)
+2 TYPO3\Flow\Http\RequestHandler::handleRequest()
+1 TYPO3\Flow\Core\Bootstrap::run()
+
+HTTP REQUEST:
+POST /emulate/emulate8086/Standard/setMemory HTTP/1.1
+Host: emulate.project
+Connection: keep-alive
+Content-Length: 837
+Accept: */*
+Origin: http://emulate.project
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://emulate.project/emulator
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8
+
+data=%7B%22flags%22%3A%7B%22carry%22%3A0%2C%22parity%22%3A0%2C%22auxilary%22%3A0%2C%22zero%22%3A0%2C%22sign%22%3A0%2C%22trace%22%3A0%2C%22interept%22%3A0%2C%22direction%22%3A0%2C%22overflow%22%3A0%7D%2C%22registers%22%3A%7B%22ax%22%3A56506%2C%22bx%22%3A48350%2C%22cx%22%3A12%2C%22dx%22%3A13%2C%22sp%22%3A0%2C%22bp%22%3A0%2C%22si%22%3A0%2C%22di%22%3A11%7D%2C%22segments%22%3A%7B%22code%22%3A%7B%220%22%3A10%2C%22517%22%3A%22MOV+AX%2CBX%22%2C%22518%22%3A-1%2C%22519%22%3A%22INC+AX%22%2C%22520%22%3A%22HLT%22%2C%22521%22%3A%22MOV+AX%2CBX%22%2C%22522%22%3A-1%2C%22523%22%3A%22MOV+AX%2CBX%22%2C%22524%22%3A-1%2C%22525%22%3A%22MOV+AX%2CBX%22%2C%22526%22%3A-1%2C%2265535%22%3A0%7D%2C%22data%22%3A%7B%220%22%3A10%2C%2265535%22%3A0%7D%2C%22stack%22%3A%7B%220%22%3A10%2C%2265535%22%3A0%7D%2C%22extra%22%3A%7B%220%22%3A10%2C%2265535%22%3A0%7D%7D%7D
+
+HTTP RESPONSE:
+[response was empty]
